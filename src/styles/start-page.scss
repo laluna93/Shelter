@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 42px;
+    .start-page {
+        max-width: 460px;
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+        padding-top: 13.5%;
+        .title{
+            font-family: 'Georgia';
+            font-weight: 400;
+            color:#FFFFFF;
+            font-size: 44px;
+            line-height: 57.2px;
+        }
+        .start-text {
+            font-family: 'Arial';
+            font-size: 15px;
+            line-height: 24px;
+            color: #CDCDCD;
+        }
+        .btn {
+            width: 45%;
+            background-color: #F1CDB3;
+            font-family: 'Georgia';
+            font-size: 17px;
+            letter-spacing: 1px;
+            color: #292929;
+            text-decoration: none;
+            padding: 17px 0;
+            border-radius: 25px;
+            text-align: center;
+
+        }
+    }
+    .start-img {
+        display: block;
+    }
+}

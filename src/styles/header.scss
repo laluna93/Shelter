@@ -1,0 +1,46 @@
+.header {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FAFAFA;
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 60px auto;
+    &-logo {
+        color: #FFFFFF;
+        font-family: Arial;
+        font-weight: 400;
+        font-size: 13px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        .title {
+            color: #F1CDB3;
+            font-family: Georgia;
+            font-weight: 400;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+    }
+    .navigation {
+        display: flex;
+        list-style: none;
+        gap: 35px;
+        .nav-link {
+            padding-bottom:2px;
+            cursor: pointer;
+            color: #CDCDCD;
+            transition: 0.4s;
+            &:hover {
+                color: #FAFAFA;
+                transition: 0.4s;
+            }
+            &.active {
+                border-bottom: 3px solid #F1CDB3;
+                color: #FAFAFA;
+            }
+        }
+    }
+}
