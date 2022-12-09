@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index'),
     mode: 'development',
@@ -30,7 +29,7 @@ const baseConfig = {
             },
             
             {
-                test: /.(png|jpg|jpeg|svg|gif)$/,
+                test: /.(png|jpg|jpeg|svg|gif|json)$/,
                 type: 'asset/resource',
             },
         ],
@@ -49,7 +48,8 @@ const baseConfig = {
         }),
         new CleanWebpackPlugin(),
         new EslingPlugin({ extensions: 'ts' }),
-        new CopyPlugin({ patterns: [{ from: './src/assets/img', to: 'assets/img' }] }),
+        new CopyPlugin({ patterns: [{ from: './src/assets/img', to: 'assets/img' },
+        { from: './src/assets/json', to: 'assets/json' }] }),
     ],
 };
 
