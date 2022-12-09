@@ -1,6 +1,7 @@
 
 @import './styles/header.scss';
 @import './styles/main-page.scss';
+@import './styles/about-page.scss';
 
 * {
     margin: 0;
@@ -14,6 +15,4 @@
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
-    gap: 42px;
 }
