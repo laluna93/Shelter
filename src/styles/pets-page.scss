@@ -1,0 +1,32 @@
+.pets-page {
+    background-color: #F6F6F6;
+    padding: 80px 40px 100px;
+    flex-direction: column;
+    .title {
+        text-align: center;
+        margin: 0 auto;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        letter-spacing: 0.06em;
+        line-height: 45.5px;
+    }
+    .btn {
+        max-width: 261px;
+        width: 45%;
+        background-color: #F1CDB3;
+        font-family: 'Georgia';
+        font-size: 17px;
+        letter-spacing: 1px;
+        color: #292929;
+        text-decoration: none;
+        padding: 17px 0;
+        border-radius: 25px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    &_slider {
+        display: flex;
+    }
+}
