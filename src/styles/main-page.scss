@@ -1,9 +1,7 @@
-.container {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 42px;
-    .start-page {
+
+
+.main-page {
+    &_information {
         max-width: 460px;
         display: flex;
         flex-direction: column;
@@ -16,7 +14,7 @@
             font-size: 44px;
             line-height: 57.2px;
         }
-        .start-text {
+        &_text {
             font-family: 'Arial';
             font-size: 15px;
             line-height: 24px;
@@ -36,7 +34,8 @@
 
         }
     }
-    .start-img {
+    &_img {
         display: block;
     }
 }
+
