@@ -3,13 +3,12 @@ import { petsSlider } from './selectors';
 import { arrayPets } from './variables';
 
 export function createCards(pets: Pet[], id:number) {
-  console.log(id);
-
+  const pageLocal = localStorage.getItem('page') ? localStorage.getItem('page') : 1;
   const wrapperCards = document.createElement('div');
 
   wrapperCards.classList.add('wrapper-cards');
   wrapperCards.setAttribute('id', `${id}`);
-  if (wrapperCards.id === '1') {
+  if (wrapperCards.id === `${pageLocal}`) {
     wrapperCards.classList.add('active');
   }
 

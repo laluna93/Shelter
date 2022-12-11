@@ -46,12 +46,11 @@
             margin: 0 auto;
             .wrapper-cards {
                 position: relative;
-                // display: none;
-                display: flex;
+                display: none;
+                gap: 90px;
 
                 &.active {
                     display: flex;
-                    gap: 90px;
                 }
                 .card {
                     display: flex;
