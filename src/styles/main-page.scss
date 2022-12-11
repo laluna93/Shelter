@@ -1,8 +1,9 @@
 
 
 .main-page {
-    flex-wrap: wrap;
     gap: 42px;
+    padding: 0px 40px;
+
     &_information {
         max-width: 460px;
         display: flex;

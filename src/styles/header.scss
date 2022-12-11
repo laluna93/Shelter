@@ -1,5 +1,5 @@
 .header {
-    max-width: 1200px;
+    max-width: 1280px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -9,6 +9,7 @@
     font-weight: 400;
     font-size: 15px;
     margin: 60px auto;
+    padding: 0px 40px;
     &-logo {
         color: #FFFFFF;
         font-family: Arial;
