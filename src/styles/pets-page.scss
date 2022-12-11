@@ -36,7 +36,6 @@
             border-radius: 100%;
             background-color: transparent;
             border: 1px solid #F1CDB3;
-
         }
         .right {
             right: 0;
@@ -44,12 +43,16 @@
         .slider {
             max-width: 990px;
             display: flex;
-            overflow: hidden;
             margin: 0 auto;
             .wrapper-cards {
+                position: relative;
+                // display: none;
                 display: flex;
-                gap: 90px;
 
+                &.active {
+                    display: flex;
+                    gap: 90px;
+                }
                 .card {
                     display: flex;
                     flex-direction: column;
@@ -82,5 +85,21 @@
             }
 
         }
+    }
+}
+
+.test{
+    transform: translateX(520px);
+}
+
+@keyframes slider {
+    0% { 
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(-620px)
+    }
+    100% {
+        transform: translateX(-990px)
     }
 }

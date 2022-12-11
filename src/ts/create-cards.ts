@@ -1,11 +1,20 @@
+import { Pet } from '../model/pets-model';
 import { petsSlider } from './selectors';
+import { arrayPets } from './variables';
 
-function createCards(pets: any) {
+export function createCards(pets: Pet[], id:number) {
+  console.log(id);
+
   const wrapperCards = document.createElement('div');
 
   wrapperCards.classList.add('wrapper-cards');
+  wrapperCards.setAttribute('id', `${id}`);
+  if (wrapperCards.id === '1') {
+    wrapperCards.classList.add('active');
+  }
+
   petsSlider?.append(wrapperCards);
-  pets.forEach((card:any) => {
+  pets.forEach((pet:Pet) => {
     const wrapperCard = document.createElement('div');
     const imgPet = document.createElement('img');
     const titlePet = document.createElement('h3');
@@ -16,19 +25,18 @@ function createCards(pets: any) {
     titlePet.classList.add('title-pet');
     btnPet.classList.add('btn-pet');
 
-    imgPet.src = card.img;
-    imgPet.setAttribute('alt', `${card.type} ${card.name}`);
-    titlePet.textContent = card.name;
+    imgPet.src = pet.img;
+    imgPet.setAttribute('alt', `${pet.type} ${pet.name}`);
+    titlePet.textContent = pet.name;
     btnPet.textContent = 'Learn more';
     btnPet.onclick = () => {
-      console.log('click', card.name);
+      console.log('click', pet.name);
     };
 
-    wrapperCard.append(imgPet);
-    wrapperCard.append(titlePet);
-    wrapperCard.append(btnPet);
+    wrapperCard.append(imgPet, titlePet, btnPet);
     wrapperCards.append(wrapperCard);
   });
-}
+  arrayPets.push(wrapperCards);
 
-export { createCards };
+  return wrapperCards;
+}
