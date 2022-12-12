@@ -48,16 +48,24 @@
             left: 0;
             .wrapper-cards {
                 position: relative;
-                // display: none;
+                display: none;
                 gap: 90px;
-                display: flex;
+                // display: flex;
                 // left: 0;
                 // transform: translateX(0);
+                // transform: translateX(-990px);
+                // opacity: 0;
+                animation: backslider 3s linear;
+
                 &.active {
                     transition: transform 3s;
+                    // opacity: 5;
+                    // transform: translateX(0);
+                    display: flex;
+                    animation: slider 3s linear;
+
                     // left: 0;
                     // animation: slider 2s linear
-                    // display: flex;
                     // animation: slider 3s linear;
                 }
                 .card {
@@ -95,16 +103,49 @@
     }
 }
 
-.test{
-    transform: translateX(520px);
+
+
+@keyframes slider {
+    0%{
+        opacity: 0;
+        transform: translateX(-990px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-590px);
+    }
+    100%{
+        opacity: 5;
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(0);
+    }
+    from {
+        transform: translateX(-990px);
+
+    }
+
 }
 
-// @keyframes slider {
+@keyframes backslider {
+    0%{
+        opacity: 0;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-590px);
+    }
+    100%{
+        opacity: 5;
+        transform: translateX(-990px);
+    }
+    to {
+        transform: translateX(-990px);
+    }
+    from {
+        transform: translateX(0);
 
-//     to {
-//         left: 0;
-//     }
-//     from {
-//         left: 100%;
-//     }
-// }
+    }
+}
