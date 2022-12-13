@@ -46,28 +46,21 @@
             margin: 0 auto;
             overflow: hidden;
             left: 0;
+            
             .wrapper-cards {
                 position: relative;
-                display: none;
                 gap: 90px;
-                // display: flex;
-                // left: 0;
-                // transform: translateX(0);
-                // transform: translateX(-990px);
-                // opacity: 0;
-                animation: backslider 3s linear;
-
+                display: flex;
+                animation: backslider 1s linear;
+                display: none;
+                left: -100%;
                 &.active {
-                    transition: transform 3s;
-                    // opacity: 5;
-                    // transform: translateX(0);
+                    left: 0;
+                    transition: transform 1s;
+                    animation: slider 1s linear;
                     display: flex;
-                    animation: slider 3s linear;
-
-                    // left: 0;
-                    // animation: slider 2s linear
-                    // animation: slider 3s linear;
                 }
+
                 .card {
                     display: flex;
                     flex-direction: column;
@@ -106,46 +99,28 @@
 
 
 @keyframes slider {
-    0%{
-        opacity: 0;
-        transform: translateX(-990px);
-    }
-    50% {
-        opacity: 1;
-        transform: translateX(-590px);
-    }
-    100%{
-        opacity: 5;
-        transform: translateX(0);
-    }
     to {
         transform: translateX(0);
+        left: 0;
+        
     }
     from {
         transform: translateX(-990px);
+        left: -100%;
 
     }
 
 }
 
 @keyframes backslider {
-    0%{
-        opacity: 0;
-        transform: translateX(0);
-    }
-    50% {
-        opacity: 1;
-        transform: translateX(-590px);
-    }
-    100%{
-        opacity: 5;
-        transform: translateX(-990px);
-    }
     to {
-        transform: translateX(-990px);
+        transform: translateX(0);
+        left: 0;
+
     }
     from {
-        transform: translateX(0);
+        transform: translateX(-990px);
+        left: -100%;
 
     }
 }

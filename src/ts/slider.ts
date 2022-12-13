@@ -12,14 +12,14 @@ export function slider() {
     numberPage > 1 ? numberPage -= 1 : numberPage = arrayPets.length;
     activeSlide(numberPage);
     localStorage.setItem('page', `${numberPage}`);
-    moveSlides();
+    // moveSlides();
   };
 
   btnRightSlider.onclick = () => {
     numberPage < arrayPets.length ? numberPage += 1 : numberPage = 1;
     activeSlide(numberPage);
     localStorage.setItem('page', `${numberPage}`);
-    moveSlides();
+    // moveSlides();
   };
 
   console.log(numberPage, 'test');
@@ -30,29 +30,40 @@ export function slider() {
 function activeSlide(numberPage: number) {
   arrayPets.forEach((slide) => {
     slide.classList.remove('active');
+    slide.style.display = 'flex';
 
     if (slide.id === `${numberPage}`) {
       slide.classList.add('active');
+      slide.style.display = 'flex';
     }
-    // else {
-    //   slide.style.transform = `translateX(${(-990)}px)`;
-    // }
 
-    // if (slide.classList.contains('active')) {
-    //   slide.style.transform = `translateX(${(0)}px)`;
-    // }
-
-    // slide.style.transform = `translateX(${-990}px)`;
-    // slide.style.transition = '4s';
+    slide.addEventListener('animationend', () => {
+      if (!slide.classList.contains('active')) {
+        slide.style.display = 'none';
+      }
+    });
   });
 }
 
-function moveSlides() {
-  arrayPets.forEach((slide) => {
-    if (slide.classList.contains('active') && slide.id > 1) {
-      const firstSlide = (arrayPets.shift());
+// function moveSlides() {
+//   arrayPets.forEach((slide) => {
+//     slide.style.display = 'flex';
 
-      arrayPets.push(firstSlide);
-    }
-  });
-}
+//     // if (slide.classList.contains('active') && slide.id > 1) {
+//     //   const firstSlide = (arrayPets.shift());
+
+//     //   slide.style.display = 'flex';
+
+//     //   arrayPets.push(firstSlide);
+//     // }
+
+//     slide.addEventListener('animationend', () => {
+//       if (!slide.classList.contains('active')) {
+//         slide.style.display = 'none';
+//       }
+//     });
+//   });
+// }
+
+// создать новый стиль где давать дисплей флекс i-1
+// развернуть массив
