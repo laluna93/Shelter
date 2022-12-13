@@ -45,6 +45,7 @@
             display: flex;
             margin: 0 auto;
             overflow: hidden;
+            position: relative;
             left: 0;
             
             .wrapper-cards {
@@ -60,7 +61,6 @@
                     animation: slider 1s linear;
                     display: flex;
                 }
-
                 .card {
                     display: flex;
                     flex-direction: column;
@@ -96,8 +96,6 @@
     }
 }
 
-
-
 @keyframes slider {
     to {
         transform: translateX(0);
@@ -106,10 +104,9 @@
     }
     from {
         transform: translateX(-990px);
+
         left: -100%;
-
     }
-
 }
 
 @keyframes backslider {
