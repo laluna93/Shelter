@@ -2,9 +2,9 @@ import { Pet } from '../model/pets-model';
 
 export function createPetCard({ name, img }:Pet) {
   const wrapperCard = document.createElement('div') as HTMLDivElement;
-  const cardElement = ['img', 'h3', 'button'];
-  const dataPet = [name, 'Learn more'];
-  const cardClass = ['img-pet', 'title-pet', 'btn-pet'];
+  const cardElement = ['img', 'h3'];
+  const cardClass = ['img-pet', 'title-pet'];
+  const buttonPetInfo = '<button class="btn-pet">Learn more</button>';
 
   wrapperCard.classList.add('card');
 
@@ -15,15 +15,12 @@ export function createPetCard({ name, img }:Pet) {
     if (card === 'img') {
       cardPet.setAttribute('src', img);
     } else {
-      cardPet.textContent = dataPet[i - 1];
+      cardPet.textContent = name;
     }
 
     wrapperCard.append(cardPet);
   });
-
-  wrapperCard.children[2].addEventListener('click', () => {
-    console.log(name);
-  });
+  wrapperCard.innerHTML += buttonPetInfo;
 
   return wrapperCard;
 }

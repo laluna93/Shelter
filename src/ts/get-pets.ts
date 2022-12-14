@@ -1,8 +1,8 @@
-import { renderPets } from './render-pets';
+import { renderSlides } from './render-slides';
 
 export const getPets = async (path: string) => {
   const res = await fetch(path);
   const data = await res.json();
 
-  return renderPets(data);
+  return renderSlides(data);
 };
