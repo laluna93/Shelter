@@ -1,9 +1,11 @@
 import { Pet } from '../model/pets-model';
 import { petsSlider } from './selectors';
-import { arrayPets } from './variables';
+// import { arrayPets } from './variables';
 
 export function createCards(pets: Pet[], id:number) {
-  const pageLocal = localStorage.getItem('page') ? localStorage.getItem('page') : 1;
+  const pageLocal = localStorage.getItem('page') ? JSON.parse(JSON.stringify(localStorage.getItem('page')))
+    : 1;
+
   const wrapperCards = document.createElement('div');
 
   wrapperCards.classList.add('wrapper-cards');
@@ -12,7 +14,6 @@ export function createCards(pets: Pet[], id:number) {
     wrapperCards.classList.add('active');
   }
 
-  petsSlider?.append(wrapperCards);
   pets.forEach((pet:Pet) => {
     const wrapperCard = document.createElement('div');
     const imgPet = document.createElement('img');
@@ -35,7 +36,11 @@ export function createCards(pets: Pet[], id:number) {
     wrapperCard.append(imgPet, titlePet, btnPet);
     wrapperCards.append(wrapperCard);
   });
-  arrayPets.push(wrapperCards);
+  // arrayPets.push(wrapperCards);
+  // appendPets(pageLocal);
+  petsSlider?.append(wrapperCards);
 
   return wrapperCards;
 }
+// сделать функцию принимающей номер страницы
+// вырезать из массива с врапперами 0 элемент и вставлять его в конец, а 0 отрисовывать
