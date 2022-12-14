@@ -46,21 +46,23 @@
             margin: 0 auto;
             overflow: hidden;
             position: relative;
-            left: 0;
             transition: 2s ease;
             .wrapper-cards {
                 position: relative;
                 gap: 90px;
                 display: flex;
-                animation: slider 2s linear;
+                &.active-left {
+                    animation: leftSliderActive 2s linear;
+                }
+                &.left {
+                    animation: leftSlider 2s linear;
+                }
+                &.active-right {
+                    animation: rightSliderActive 2s linear;
+                }
+                &.right {
+                    animation: rightSlider 2s linear;
 
-                // display: none;
-                // left: -100%;
-                &.active {
-                    // left: 0;
-                    animation: backslider 2s linear;
-                    transition: transform 1s;
-                    display: flex;
                 }
                 .card {
                     display: flex;
@@ -97,7 +99,7 @@
     }
 }
 
-@keyframes backslider {
+@keyframes leftSlider {
     to {
         transform: translateX(-990px);
         
@@ -106,11 +108,30 @@
         transform: translateX(0);
     }
 }
-@keyframes slider {
+@keyframes leftSliderActive {
     to {
         transform: translateX(-990px);
     }
     from {
         transform: translateX(0);
+    }
+}
+
+
+@keyframes rightSlider {
+    to {
+        transform: translateX(0);
+        
+    }
+    from {
+        transform: translateX(-990px);
+    }
+}
+@keyframes rightSliderActive {
+    to {
+        transform: translateX(0);
+    }
+    from {
+        transform: translateX(-990px);
     }
 }

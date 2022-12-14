@@ -1,4 +1,4 @@
-import { appendPets } from './append-pets';
+import { moveSlider } from './move-slider';
 import { editNumberPage } from './number-page';
 import { btnLeftSlider, btnRightSlider, petsSlider } from './selectors';
 
@@ -10,31 +10,15 @@ export function slider() {
 
   btnLeftSlider.onclick = () => {
     numberPage > 1 ? numberPage -= 1 : numberPage = petsSlider.children.length;
-    appendPets(numberPage);
-    // activeSlide(numberPage);
-
+    moveSlider(numberPage, 'active-right', 'right');
     localStorage.setItem('page', `${numberPage}`);
   };
 
   btnRightSlider.onclick = () => {
     numberPage < petsSlider.children.length ? numberPage += 1 : numberPage = 1;
-    console.log(numberPage, 'numberPage');
-
-    // activeSlide(numberPage);
-    appendPets(numberPage);
-
+    moveSlider(numberPage, 'active-left', 'left');
     localStorage.setItem('page', `${numberPage}`);
   };
 
   return editNumberPage(numberPage);
 }
-
-// function activeSlide(numberPage: number) {
-//   arrayPets.forEach((slide) => {
-//     slide.classList.remove('active');
-
-//     if (slide.id === `${numberPage}`) {
-//       slide.classList.add('active');
-//     }
-//   });
-// }
