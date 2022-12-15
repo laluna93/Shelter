@@ -28,9 +28,7 @@ export function moveSlider(numberPage: number, classActive:string, classSlider:s
     }
 
     if (e.classList.contains('active') && classSlider === 'right') {
-      e.addEventListener('animationstart', () => {
-        petsSlider.prepend(petsSlider.lastElementChild!);
-      }, { once: true });
+      petsSlider.prepend(petsSlider.lastElementChild!);
     }
   });
 }
