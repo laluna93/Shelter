@@ -1,4 +1,4 @@
-import { petsSlider } from './selectors';
+import { btnLeftSlider, btnRightSlider, petsSlider } from './selectors';
 
 export function moveSlider(numberPage: number, classActive:string, classSlider:string) {
   [...petsSlider.children].forEach((e) => {
@@ -22,13 +22,20 @@ export function moveSlider(numberPage: number, classActive:string, classSlider:s
     }
 
     if (e.classList.contains('active') && classSlider === 'left') {
+      btnRightSlider.disabled = true;
+
       e.addEventListener('animationend', () => {
         petsSlider.append(petsSlider.firstElementChild!);
+        btnRightSlider.disabled = false;
       }, { once: true });
     }
 
     if (e.classList.contains('active') && classSlider === 'right') {
+      btnLeftSlider.disabled = true;
       petsSlider.prepend(petsSlider.lastElementChild!);
+      e.addEventListener('animationend', () => {
+        btnLeftSlider.disabled = false;
+      }, { once: true });
     }
   });
 }
