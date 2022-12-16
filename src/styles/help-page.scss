@@ -1,0 +1,60 @@
+.help-page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 40px 100px;
+    background-color: #FFFFFF;
+    .title{
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        letter-spacing: 0.06em;
+        line-height: 45.5px;
+        color: #545454;
+        text-align: center;
+        margin-bottom: 55px;
+    }
+    .wrapper-help {
+        display: flex;
+        max-width: 1026px;
+        flex-wrap: wrap;
+        gap: 55px 118px;
+        // justify-content: space-between;
+        justify-content: center;
+        .help {
+            font-family: 'Georgia';
+            font-style: normal;
+            font-size: 20px;
+            letter-spacing: 0.06em;
+            line-height: 23px;
+            color: #545454;
+            height: 113px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            &:first-child {
+                width: 83px;
+            }
+            &:nth-child(2), &:nth-child(4) {
+                width: 154px;
+            }
+            &:nth-child(3) {
+                width: 60px;
+            }
+            &:nth-child(5), &:nth-child(7) {
+                width: 101px;
+            }
+            &:nth-child(6) {
+                width: 89px;
+            }
+            &:nth-child(8) {
+                width: 166px;
+            }
+            &:nth-child(9) {
+                width: 144px;
+            }
+        }
+    }
+}

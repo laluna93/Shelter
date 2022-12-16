@@ -1,0 +1,52 @@
+.donat-page {
+    gap: 30px;
+    padding: 80px 40px 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F6F6;
+    .wrapper-donat {
+        max-width: 380px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .title {
+            color: #545454;
+            font-family: 'Georgia';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 45.5px;
+            letter-spacing: 2px;
+        }
+        .title-card {
+            font-family: 'Georgia';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: 0.06em;
+        }
+        .card {
+            background-color: #F1CDB3;
+            max-width: 349px;
+            height: 43px;
+            font-family: 'Georgia';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 0.06em;
+            padding: 0 14px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-radius: 9px;
+        }
+        .card-info {
+            font-family: 'Arial';
+            font-style: italic;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #B2B2B2;
+        }
+    }
+}
