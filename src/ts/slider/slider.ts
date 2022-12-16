@@ -1,6 +1,6 @@
 import { moveSlider } from './move-slider';
-import { editNumberPage } from './number-page';
-import { btnLeftSlider, btnRightSlider, petsSlider } from './selectors';
+import { editNumberPage } from '../number-page';
+import { btnLeftSlider, btnRightSlider, petsSlider } from '../selectors';
 
 export function slider() {
   const pageLocal = localStorage.getItem('page');

@@ -1,6 +1,6 @@
-import { Pet } from '../model/pets-model';
+import { Pet } from '../../model/pets-model';
 import { createSlide } from './create-slide';
-import { petsSlider } from './selectors';
+import { petsSlider } from '../selectors';
 
 export function renderSlides(pets: Pet[]) {
   let id = 0;

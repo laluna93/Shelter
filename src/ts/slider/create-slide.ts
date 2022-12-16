@@ -1,5 +1,5 @@
-import { Pet } from '../model/pets-model';
-import { createPetCard } from './create-pet-card';
+import { Pet } from '../../model/pets-model';
+import { createPetCard } from '../create-pet-card';
 
 export function createSlide(pets: Pet[], id:number) {
   const pageLocal = localStorage.getItem('page') ? JSON.parse(JSON.stringify(localStorage.getItem('page'))) : 1;
