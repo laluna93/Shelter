@@ -1,5 +1,5 @@
 import { Pet } from '../../model/pets-model';
-import { createSlide } from './create-slide';
+import { createSlide } from './slide';
 import { petsSlider } from '../selectors';
 
 export function renderSlides(pets: Pet[]) {
@@ -16,20 +16,15 @@ export function renderSlides(pets: Pet[]) {
 }
 
 function appendSlides(slides: HTMLDivElement[]) {
-  const newSlides: HTMLDivElement[] = [...slides];
+  const arraySlides = [...slides];
+  const activeSlide = arraySlides.findIndex((e) => e.classList.contains('active'));
 
-  newSlides.forEach((slide, idx) => {
-    if (slide.classList.contains('active')) {
-      const checkElement = (idx >= 0 && idx < newSlides.length - 1);
+  if (activeSlide === 0) {
+    arraySlides.forEach((slide) => petsSlider.append(slide));
+  } else {
+    arraySlides.push(arraySlides.shift()!);
+    appendSlides(arraySlides);
+  }
 
-      checkElement
-        ? newSlides.push(newSlides.shift()!)
-        : newSlides.unshift(newSlides.pop()!);
-    }
-  });
-  console.log(newSlides);
-
-  return newSlides.forEach((slide) => petsSlider.append(slide));
+  return arraySlides;
 }
-
-// findIndex

@@ -1,5 +1,5 @@
 import { Pet } from '../../model/pets-model';
-import { createPetCard } from '../create-pet-card';
+import { createPetCard } from '../pet-card';
 import { openPopup } from '../popup/view-popup';
 
 export function createSlide(pets: Pet[], id:number) {
