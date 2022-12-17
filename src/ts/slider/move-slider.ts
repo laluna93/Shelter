@@ -2,7 +2,7 @@ import { btnLeftSlider, btnRightSlider, petsSlider } from '../selectors';
 
 export function moveSlider(numberPage: number, classActive:string, classSlider:string) {
   [...petsSlider.children].forEach((e) => {
-    removeClassSlides(e, classActive, classSlider);
+    removeClassSlides(e);
 
     if (e.id === `${numberPage}`) {
       e.classList.add('active');
@@ -36,16 +36,10 @@ function moveSlides(e:Element, classStyle: string) {
   }, { once: true });
 }
 
-function removeClassSlides(e:Element, classActive:string, classSlider:string) {
-  if (classSlider === 'right') {
-    e.classList.remove('left');
-    e.classList.remove('active-left');
-  } else {
-    e.classList.remove('right');
-    e.classList.remove('active-right');
-  }
+function removeClassSlides(e:Element) {
+  const classesSlide = ['left', 'right', 'active-left', 'active-right', 'active'];
 
-  e.classList.remove('active');
-  e.classList.remove(classActive);
-  e.classList.remove(classSlider);
+  return classesSlide.forEach((classSlide: string) => {
+    e.classList.remove(`${classSlide}`);
+  });
 }
