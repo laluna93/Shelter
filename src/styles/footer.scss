@@ -23,8 +23,17 @@
             font-weight: 400;
             font-size: 20px;
             letter-spacing: 0.06em;
-            color: #F1CDB3;
             line-height: 23px;
+            cursor: pointer;
+            transition: all 0.3s;
+            &:hover {
+                filter: contrast(5);
+            }
+            .link-contact {
+                text-decoration-line: none;
+                color: #F1CDB3;
+
+            }
         }
 
     }

@@ -24,6 +24,11 @@
             background-color: transparent;
             color: #292929;
             border: 2px solid #F1CDB3;
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover {
+                background-color: #FDDCC4;
+            }
         }
         .img-pet {
             width: 500px;

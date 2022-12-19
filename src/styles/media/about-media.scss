@@ -1,0 +1,12 @@
+@media(min-width: 768px) and (max-width: 1200px) {
+    .about-page {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        gap: 80px;
+        padding: 80px 0 100px;
+        .title {
+            line-height: 42.5px;
+        }
+    }
+}

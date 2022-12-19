@@ -39,6 +39,11 @@
             align-items: center;
             gap: 15px;
             border-radius: 9px;
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover {
+                background-color: #FDDCC4;
+            }
         }
         .card-info {
             font-family: 'Arial';

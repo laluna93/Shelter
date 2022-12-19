@@ -26,6 +26,10 @@
         border-radius: 25px;
         text-align: center;
         margin: 0 auto;
+        transition: all 0.4s;
+        &:hover {
+            background-color: #FDDCC4;
+        }
     }
     .wrapper-slider {
         position: relative;
@@ -36,6 +40,16 @@
             border-radius: 100%;
             background-color: transparent;
             border: 1px solid #F1CDB3;
+            cursor: pointer;
+            transition: all 0.4s;
+            &:hover:enabled {
+                background-color: #FDDCC4;
+            }
+            &:disabled {
+                color:#aeaeae;
+                border: 1px solid #aeaeae;
+
+            }
         }
         .right {
             right: 0;
@@ -72,6 +86,10 @@
                     gap: 30px;
                     background-color: #FAFAFA;
                     padding-bottom: 30px;
+                    transition: all 0.4s;
+                    &:hover {
+                        background-color: #FFFFFF;
+                    }
                     .title-pet {
                         font-family: 'Georgia';
                         font-style: normal;
@@ -91,6 +109,10 @@
                         background-color: transparent;
                         border: 1px solid #F1CDB3;
                         cursor: pointer;
+                        transition: all 0.4s;
+                        &:hover {
+                            background-color: #FDDCC4;
+                        }
                     }
                 }
             }

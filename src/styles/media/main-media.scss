@@ -1,0 +1,17 @@
+@media(min-width: 768px) and (max-width: 1200px) {
+    .main-page {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 100px;
+        &_information {
+            padding-top: 0;
+            .btn {
+                margin: 0 auto;
+            }
+        }
+        &_img {
+            max-width: 569px;
+            margin-left: 130px;
+        }
+    }
+}

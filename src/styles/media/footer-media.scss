@@ -1,0 +1,12 @@
+@media(min-width: 768px) and (max-width: 1200px) {
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        justify-content: center;
+        padding-top: 30px;
+        .footer-info {
+            margin: 0;
+        }
+    }
+}

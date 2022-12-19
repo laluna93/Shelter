@@ -1,0 +1,14 @@
+@media(min-width: 768px) and (max-width: 1200px) {
+    .help-page {
+
+        .wrapper-help {
+            max-width: 630px;
+            gap: 55px 60px;
+            .help {
+                &:nth-child(n) {
+                    width: 170px;
+                }
+            }
+        }
+    }
+}

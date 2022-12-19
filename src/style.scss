@@ -1,4 +1,3 @@
-
 @import './styles/header.scss';
 @import './styles/main-page.scss';
 @import './styles/about-page.scss';
@@ -7,6 +6,13 @@
 @import './styles/donat-page.scss';
 @import './styles/footer.scss';
 @import './styles/popup.scss';
+@import './styles/media/header-media.scss';
+@import './styles/media/main-media.scss';
+@import './styles/media/about-media.scss';
+@import './styles/media/pets-media.scss';
+@import './styles/media/help-media.scss';
+@import './styles/media/donat-media.scss';
+@import './styles/media/footer-media.scss';
 
 * {
     margin: 0;
