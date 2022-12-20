@@ -1,24 +1,42 @@
-import { moveSlider } from './move-slider';
-import { editNumberPage } from '../number-page';
-import { btnLeftSlider, btnRightSlider, petsSlider } from '../selectors';
+import { Pet } from '../../model/pets-model';
+import { createSlide } from './slide';
+import { petsSlider } from '../selectors';
 
-export function slider() {
-  const pageLocal = localStorage.getItem('page');
-  let numberPage: number = 0;
+export async function renderSlides(petsPromise: Promise<Pet[]>, lengthSlides: number) {
+  const pets = await petsPromise.then((e) => e);
 
-  pageLocal ? numberPage = JSON.parse(pageLocal) : numberPage = 1;
+  console.log(lengthSlides);
+  let id = 0;
+  const slides: HTMLDivElement[] = [];
+  let c = 0;
 
-  btnLeftSlider.onclick = () => {
-    numberPage > 1 ? numberPage -= 1 : numberPage = petsSlider.children.length;
-    moveSlider(numberPage, 'active-right', 'right');
-    localStorage.setItem('page', `${numberPage}`);
-  };
+  for (let i = 0; i <= pets.length - 1; i += 1) {
+    if (lengthSlides === 2 && i % 2 === 0) {
+      console.log(pets.slice(i, i + 2));
 
-  btnRightSlider.onclick = () => {
-    numberPage < petsSlider.children.length ? numberPage += 1 : numberPage = 1;
-    moveSlider(numberPage, 'active-left', 'left');
-    localStorage.setItem('page', `${numberPage}`);
-  };
+      c += 1;
+    }
 
-  return editNumberPage(numberPage);
+    if (i % 3 === 0) {
+      slides.push(createSlide(pets.slice(i, i + 3), id += 1));
+    }
+  }
+
+  console.log(c);
+
+  return appendSlides(slides);
+}
+
+function appendSlides(slides: HTMLDivElement[]) {
+  const arraySlides = [...slides];
+  const activeSlide = arraySlides.findIndex((e) => e.classList.contains('active'));
+
+  if (activeSlide === 0) {
+    arraySlides.forEach((slide) => petsSlider.append(slide));
+  } else {
+    arraySlides.push(arraySlides.shift()!);
+    appendSlides(arraySlides);
+  }
+
+  return arraySlides;
 }
