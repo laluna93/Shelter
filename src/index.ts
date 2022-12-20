@@ -1,16 +1,35 @@
 import './style.scss';
 import { getPets } from './ts/get-pets';
-import { slider } from './ts/slider/slider';
-import { pathPets } from './ts/variables';
+import { slider } from './ts/slider/btn-slider';
+import { renderSlides } from './ts/slider/slider';
+import { pathPets, desktop, tablet, mobile } from './ts/variables';
 
-getPets(pathPets);
+const pets = getPets(pathPets);
+
 slider();
 
-const nowWidth = window.screen.availWidth;
-const windowWidth = window.matchMedia('(max-width: 600px)');
+tablet.addEventListener('change', getLengthSlides);
+desktop.addEventListener('change', getLengthSlides);
+mobile.addEventListener('change', getLengthSlides);
+function getLengthSlides() {
+  let lengthSlide = 0;
 
-windowWidth.onchange = () => {
-  console.log(windowWidth, '1s');
-};
+  if (desktop.matches) {
+    lengthSlide = 3;
+    renderSlides(pets, lengthSlide);
+  }
 
-console.log(nowWidth);
+  if (tablet.matches) {
+    lengthSlide = 2;
+    renderSlides(pets, lengthSlide);
+  }
+
+  if (mobile.matches) {
+    lengthSlide = 1;
+    renderSlides(pets, lengthSlide);
+  }
+
+  return lengthSlide;
+}
+
+getLengthSlides();
