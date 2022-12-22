@@ -22,26 +22,27 @@ export async function renderSlides(petsPromise: Promise<Pet[]>, lengthSlides: nu
     }
   }
 
+  [...petsSlider.children].forEach((e) => {
+    if (e.children.length !== lengthSlides || [...petsSlider.children].includes(e)) {
+      e.remove();
+      localStorage.removeItem('page');
+    }
+  });
+
   return appendSlides(slides, lengthSlides);
 }
 
 function appendSlides(slides: HTMLDivElement[], lengthSlides:number) {
-  const arraySlides = [...new Set(slides)];
+  const arraySlides = [...slides];
 
-  console.log(arraySlides, 'arraySlides');
-  [...petsSlider.children].forEach((e) => {
-    if (e.children.length !== lengthSlides || [...petsSlider.children].includes(e)) {
-      e.remove();
-      console.log(e, 'e');
-    }
-  });
-  console.log(petsSlider, '2');
+  // console.log(arraySlides, '2');
 
   const activeSlide = arraySlides.findIndex((e) => e.classList.contains('active'));
 
   if (activeSlide === 0) {
     arraySlides.forEach((slide) => {
       petsSlider.append(slide);
+      console.log('1');
     });
   } else {
     arraySlides.push(arraySlides.shift()!);
