@@ -5,6 +5,13 @@ import { petsSlider } from '../selectors';
 export async function renderSlides(petsPromise: Promise<Pet[]>, lengthSlides: number) {
   const pets = await petsPromise.then((e) => e);
 
+  [...petsSlider.children].forEach((e) => {
+    if (e.children.length !== lengthSlides || [...petsSlider.children].includes(e)) {
+      e.remove();
+      localStorage.setItem('page', '1');
+    }
+  });
+
   let id = 0;
   const slides: HTMLDivElement[] = [];
 
@@ -22,32 +29,20 @@ export async function renderSlides(petsPromise: Promise<Pet[]>, lengthSlides: nu
     }
   }
 
-  [...petsSlider.children].forEach((e) => {
-    if (e.children.length !== lengthSlides || [...petsSlider.children].includes(e)) {
-      e.remove();
-      localStorage.removeItem('page');
-    }
-  });
-
-  return appendSlides(slides, lengthSlides);
+  return appendSlides(slides);
 }
 
-function appendSlides(slides: HTMLDivElement[], lengthSlides:number) {
-  const arraySlides = [...slides];
+function appendSlides(slides: HTMLDivElement[]) {
+  // const activeSlide = arraySlides.findIndex((e) => e.classList.contains('active'));
 
-  // console.log(arraySlides, '2');
+  // if (activeSlide === 0) {
+  slides.forEach((slide) => {
+    petsSlider.append(slide);
+  });
+  // }
+  // else {
+  //   arraySlides.push(arraySlides.shift()!);
 
-  const activeSlide = arraySlides.findIndex((e) => e.classList.contains('active'));
-
-  if (activeSlide === 0) {
-    arraySlides.forEach((slide) => {
-      petsSlider.append(slide);
-      console.log('1');
-    });
-  } else {
-    arraySlides.push(arraySlides.shift()!);
-    appendSlides(arraySlides, lengthSlides);
-  }
-
-  return arraySlides;
+  //   appendSlides(arraySlides);
+  // }
 }

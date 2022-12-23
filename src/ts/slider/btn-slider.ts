@@ -1,24 +1,24 @@
 import { moveSlider } from './move-slider';
 import { btnLeftSlider, btnRightSlider, petsSlider } from '../selectors';
-import { editNumberPage } from '../number-page';
+// import { editNumberPage } from '../number-page';
 
 export function slider() {
-  const pageLocal = localStorage.getItem('page');
-  let numberPage: number = 0;
+  // const pageLocal = localStorage.getItem('page');
+  let numberPage: number = 1;
 
-  pageLocal ? numberPage = JSON.parse(pageLocal) : numberPage = 1;
+  // pageLocal ? numberPage = JSON.parse(pageLocal) : numberPage = 1;
 
   btnLeftSlider.onclick = () => {
     numberPage > 1 ? numberPage -= 1 : numberPage = petsSlider.children.length;
     moveSlider(numberPage, 'active-right', 'right');
-    localStorage.setItem('page', `${numberPage}`);
+    // localStorage.setItem('page', `${numberPage}`);
   };
 
   btnRightSlider.onclick = () => {
     numberPage < petsSlider.children.length ? numberPage += 1 : numberPage = 1;
     moveSlider(numberPage, 'active-left', 'left');
-    localStorage.setItem('page', `${numberPage}`);
+    // localStorage.setItem('page', `${numberPage}`);
   };
 
-  return editNumberPage(numberPage);
+  // return editNumberPage(numberPage);
 }
