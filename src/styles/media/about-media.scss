@@ -10,3 +10,30 @@
         }
     }
 }
+
+@media(min-width: 320px) and (max-width: 767px) {
+    .about-pets {
+        flex-direction: column-reverse;
+        padding: 42px 0;
+        gap: 42px;
+        &__wrapper {
+            gap: 23px;
+        }
+        &__title {
+            font-size: 25px;
+            line-height: 32.5px;
+            text-align: center;
+        }
+        &__info {
+            min-width: 270px;
+            // width: 100%;
+            padding: 0 25px;
+            font-size: 15px;
+            text-align: justify;
+        }
+        &__img {
+            min-width: 260px;
+            width: 80%;
+        }
+    }
+}

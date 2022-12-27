@@ -47,8 +47,7 @@
         right: 0;
     }
     &__btn {
-        max-width: 261px;
-        width: 45%;
+        min-width: 261px;
         background-color: #F1CDB3;
         color: #292929;
         text-decoration: none;

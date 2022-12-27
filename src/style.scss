@@ -56,6 +56,10 @@
     border: 1px solid #F1CDB3;
     cursor: pointer;
     transition: all 0.4s;
+    @media(min-width: 320px) and (max-width: 767px) {
+        top: 100%;
+        margin-top: 20px;
+    }
     &:hover:enabled {
         background-color: #FDDCC4;
     }
