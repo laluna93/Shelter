@@ -1,51 +1,42 @@
 .footer {
+    max-width: 1280px;
+    display: flex;
+    margin: 0 auto;
     padding: 40px 40px 0;
-    gap: 160px;
-    .footer-info {
+    &__wrapper {
         display: flex;
         flex-direction: column;
         margin-top: 16px;
-        .title {
-            font-family: 'Georgia';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 35px;
-            letter-spacing: 0.06em;
-            line-height: 45.5px;
-            color: #FFFFFF;
+        &_left {
+            max-width: 279px;
+            gap: 40px;
         }
-        .contact {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            font-family: 'Georgia';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 20px;
-            letter-spacing: 0.06em;
-            line-height: 23px;
-            cursor: pointer;
-            transition: all 0.3s;
-            &:hover {
-                filter: contrast(5);
-            }
-            .link-contact {
-                text-decoration-line: none;
-                color: #F1CDB3;
-
-            }
+        &_center {
+            max-width: 302px;
+            gap: 34px;
         }
-
     }
-    .left-container {
-        max-width: 279px;
-        gap: 40px;
-
+    &__title {
+        font-size: 35px;
+        letter-spacing: 0.06em;
+        line-height: 45.5px;
+        color: #FFFFFF;
     }
-    .center-container {
-        max-width: 302px;
-        gap: 34px;
-
-
+    &__contact {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+        line-height: 23px;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+            filter: contrast(5);
+        }
+    }
+    &__link-contact {
+        text-decoration-line: none;
+        color: #F1CDB3;
     }
 }

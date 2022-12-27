@@ -2,7 +2,7 @@ import { Pet } from '../../model/pets-model';
 import { createPopup } from './popup';
 
 function openPopup(pet: Pet, petCard: HTMLDivElement) {
-  const openPopup = petCard.querySelector('.btn-pet') as HTMLButtonElement;
+  const openPopup = petCard.querySelector('.pet__btn') as HTMLButtonElement;
 
   openPopup.onclick = () => {
     createPopup(pet);
@@ -17,6 +17,24 @@ function closePopup(wrapperPopup: HTMLDivElement) {
   closePopup.onclick = () => {
     wrapperPopup.remove();
   };
+
+  wrapperPopup.onclick = (e) => {
+    if (e.target === wrapperPopup) {
+      wrapperPopup.remove();
+    }
+  };
+
+  wrapperPopup.addEventListener('mouseover', (e) => {
+    if (e.target === wrapperPopup || e.target === closePopup) {
+      closePopup.style.backgroundColor = '#FDDCC4';
+    }
+  });
+
+  wrapperPopup.addEventListener('mouseout', (e) => {
+    if (e.target === wrapperPopup || e.target === closePopup) {
+      closePopup.style.backgroundColor = 'transparent';
+    }
+  });
 
   return closePopup;
 }

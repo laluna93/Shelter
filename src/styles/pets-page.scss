@@ -1,122 +1,86 @@
-.pets-page {
+.pets {
+    max-width: 1280px;
     background-color: #F6F6F6;
     padding: 80px 40px 100px;
     flex-direction: column;
     gap: 60px;
-    .title {
-        text-align: center;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    &__title {
         margin: 0 auto;
-        font-family: 'Georgia';
-        font-style: normal;
-        font-weight: 400;
         font-size: 35px;
         letter-spacing: 0.06em;
         line-height: 45.5px;
     }
-    .btn {
+    &__wrapper-slider {
+        position: relative;
+    }
+    &__slider {
+        max-width: 990px;
+        display: flex;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    &__slide {
+        position: relative;
+        gap: 90px;
+        display: flex;
+        &.active-left {
+            animation: leftSliderActive 2s linear;
+        }
+        &.left {
+            animation: leftSlider 2s linear;
+        }
+        &.active-right {
+            animation: rightSliderActive 2s linear;
+        }
+        &.right {
+            animation: rightSlider 2s linear;
+        }
+    }
+    &__btn-slider-left {
+        left: 0;
+    }
+    &__btn-slider-right {
+        right: 0;
+    }
+    &__btn {
         max-width: 261px;
         width: 45%;
         background-color: #F1CDB3;
-        font-family: 'Georgia';
-        font-size: 17px;
-        letter-spacing: 1px;
         color: #292929;
         text-decoration: none;
         padding: 17px 0;
-        border-radius: 25px;
-        text-align: center;
         margin: 0 auto;
-        transition: all 0.4s;
+    }
+}
+
+.pet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    background-color: #FAFAFA;
+    padding-bottom: 30px;
+    transition: all 0.4s;
+    &:hover {
+        background-color: #FFFFFF;
+    }
+    &__title {
+        font-size: 20px;
+        color: #545454;
+        letter-spacing: 0.06em;
+    }
+    &__btn {
+        padding: 15px 45px;
+        background-color: transparent;
+        border: 1px solid #F1CDB3;
+        cursor: pointer;
         &:hover {
             background-color: #FDDCC4;
-        }
-    }
-    .wrapper-slider {
-        position: relative;
-        .btn-arrow {
-            position: absolute;
-            top: 44%;
-            padding: 17px;
-            border-radius: 100%;
-            background-color: transparent;
-            border: 1px solid #F1CDB3;
-            cursor: pointer;
-            transition: all 0.4s;
-            &:hover:enabled {
-                background-color: #FDDCC4;
-            }
-            &:disabled {
-                color:#aeaeae;
-                border: 1px solid #aeaeae;
-
-            }
-        }
-        .right {
-            right: 0;
-        }
-        .slider {
-            max-width: 990px;
-            display: flex;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-            // transition: 2s ease;
-            .wrapper-cards {
-                position: relative;
-                gap: 90px;
-                display: flex;
-                &.active-left {
-                    animation: leftSliderActive 2s linear;
-                }
-                &.left {
-                    animation: leftSlider 2s linear;
-                }
-                &.active-right {
-                    animation: rightSliderActive 2s linear;
-                }
-                &.right {
-                    animation: rightSlider 2s linear;
-
-                }
-                .card {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 30px;
-                    background-color: #FAFAFA;
-                    padding-bottom: 30px;
-                    transition: all 0.4s;
-                    &:hover {
-                        background-color: #FFFFFF;
-                    }
-                    .title-pet {
-                        font-family: 'Georgia';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 20px;
-                        color: #545454;
-                        letter-spacing: 0.06em;
-                    }
-                    .btn-pet {
-                        padding: 15px 45px;
-                        border-radius: 25px;
-                        font-family: 'Georgia';
-                        font-style: normal;
-                        font-weight: 400;
-                        font-size: 17px;
-                        letter-spacing: 0.06em;
-                        background-color: transparent;
-                        border: 1px solid #F1CDB3;
-                        cursor: pointer;
-                        transition: all 0.4s;
-                        &:hover {
-                            background-color: #FDDCC4;
-                        }
-                    }
-                }
-            }
-
         }
     }
 }
@@ -130,6 +94,7 @@
         transform: translateX(0);
     }
 }
+
 @keyframes leftSliderActive {
     to {
         transform: translateX(-990px);
@@ -138,7 +103,6 @@
         transform: translateX(0);
     }
 }
-
 
 @keyframes rightSlider {
     to {
@@ -149,6 +113,7 @@
         transform: translateX(-990px);
     }
 }
+
 @keyframes rightSliderActive {
     to {
         transform: translateX(0);

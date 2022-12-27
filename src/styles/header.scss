@@ -10,39 +10,39 @@
     font-size: 15px;
     margin: 60px auto;
     padding: 0px 40px;
-    &-logo {
+    &__logo {
         color: #FFFFFF;
         font-family: Arial;
         font-weight: 400;
         font-size: 13px;
         text-align: center;
         letter-spacing: 0.1em;
-        .header-title {
-            color: #F1CDB3;
-            font-family: Georgia;
-            font-weight: 400;
-            font-size: 33px;
-            margin-bottom: 10px;
-        }
     }
-    .navigation {
+    &__title {
+        color: #F1CDB3;
+        font-family: Georgia;
+        font-weight: 400;
+        font-size: 33px;
+        margin-bottom: 10px;
+    }
+    &__navigation{
         display: flex;
-        list-style: none;
+        list-style-type: none;
         gap: 35px;
-        .nav-link {
-            padding-bottom:2px;
-            cursor: pointer;
-            color: #CDCDCD;
-            text-decoration-line: none;
+    }
+    &__link {
+        cursor: pointer;
+        padding-bottom:2px;
+        color: #CDCDCD;
+        text-decoration-line: none;
+        transition: 0.4s;
+        &:hover {
+            color: #FAFAFA;
             transition: 0.4s;
-            &:hover {
-                color: #FAFAFA;
-                transition: 0.4s;
-            }
-            &.active {
-                border-bottom: 3px solid #F1CDB3;
-                color: #FAFAFA;
-            }
+        }
+        &_active {
+            border-bottom: 3px solid #F1CDB3;
+            color: #FAFAFA;
         }
     }
 }

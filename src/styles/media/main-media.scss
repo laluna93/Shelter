@@ -1,15 +1,16 @@
 @media(min-width: 768px) and (max-width: 1200px) {
-    .main-page {
+    .main {
         flex-wrap: wrap;
         justify-content: center;
         gap: 100px;
-        &_information {
+        &__wrapper {
             padding-top: 0;
-            .btn {
-                margin: 0 auto;
-            }
+            margin-top: 0;
         }
-        &_img {
+        &__btn {
+            margin: 0 auto;
+        }
+        &__img {
             max-width: 569px;
             margin-left: 130px;
         }

@@ -22,11 +22,11 @@ export function moveSlider(numberPage: number, classActive:string, classSlider:s
   });
 }
 
-function moveSlides(e:Element, classStyle: string) {
+function moveSlides(e: Element, classStyle: string) {
   btnRightSlider.disabled = true;
   btnLeftSlider.disabled = true;
 
-  e.addEventListener('animationend', () => {
+  return e.addEventListener('animationend', () => {
     if (classStyle === 'left') {
       petsSlider.append(petsSlider.firstElementChild!);
     }

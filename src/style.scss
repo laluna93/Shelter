@@ -28,3 +28,39 @@
     margin: 0 auto;
     display: flex;
 }
+
+.title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.btn {
+    font-family: 'Georgia';
+    font-size: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    border-radius: 25px;
+    transition: all 0.4s;
+    &:hover {
+        background-color: #FDDCC4;
+    }
+}
+
+.btn-slider {
+    position: absolute;
+    top: 43%;
+    padding: 17px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 1px solid #F1CDB3;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover:enabled {
+        background-color: #FDDCC4;
+    }
+    &:disabled {
+        color:#aeaeae;
+        border: 1px solid #aeaeae;
+    }
+}
