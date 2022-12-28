@@ -3,6 +3,8 @@
         padding: 80px 30px 100px;
         &__slider {
             margin: 0 65px;
+            max-width: 580px;
+            margin: 0 auto;
         }
         &__slide {
             gap: 40px;
@@ -29,6 +31,8 @@
         }
         &__slider {
             margin: 0 15px;
+            max-width: 270px;
+            margin: 0 auto;
         }
     }
 }

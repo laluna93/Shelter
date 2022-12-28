@@ -11,3 +11,31 @@
         }
     }
 }
+
+@media(min-width: 320px) and (max-width: 767px) {
+    .help {
+        padding: 42px 15px;
+        &__title {
+            font-size: 25px;
+            line-height: 32.5px;
+            margin-bottom: 42px;
+        }
+        &__wrapper {
+            gap: 30px 30px;
+        }
+        &__type {
+            gap: 20px;
+            height: 87px;
+            &:nth-child(n) {
+                width: 130px;
+            }
+        }
+        &__img {
+            width: 40%;
+        }
+        &__title-type {
+            font-size: 15px;
+            line-height: 16.5px;
+        }
+    }
+}

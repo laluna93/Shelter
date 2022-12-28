@@ -8,11 +8,11 @@
         flex-direction: column;
         margin-top: 16px;
         &_left {
-            max-width: 279px;
+            width: 279px;
             gap: 40px;
         }
         &_center {
-            max-width: 302px;
+            width: 302px;
             gap: 34px;
         }
     }
