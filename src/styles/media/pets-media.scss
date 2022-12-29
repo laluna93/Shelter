@@ -8,6 +8,9 @@
         }
         &__slide {
             gap: 40px;
+            min-width: 580px;
+            justify-content: center;
+
         }
     }
 }
@@ -33,6 +36,11 @@
             margin: 0 15px;
             max-width: 270px;
             margin: 0 auto;
+        }
+        &__slide {
+            min-width: 270px;
+            justify-content: center;
+
         }
     }
 }

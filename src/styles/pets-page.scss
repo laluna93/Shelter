@@ -86,7 +86,7 @@
 
 @keyframes leftSlider {
     to {
-        transform: translateX(-990px);
+        transform: translateX(-100%);
         
     }
     from {
@@ -96,7 +96,8 @@
 
 @keyframes leftSliderActive {
     to {
-        transform: translateX(-990px);
+        transform: translateX(-100%);
+        
     }
     from {
         transform: translateX(0);
@@ -109,7 +110,8 @@
         
     }
     from {
-        transform: translateX(-990px);
+        transform: translateX(-100%);
+
     }
 }
 
@@ -118,6 +120,6 @@
         transform: translateX(0);
     }
     from {
-        transform: translateX(-990px);
+        transform: translateX(-100%);
     }
 }

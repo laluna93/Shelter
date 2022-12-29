@@ -1,4 +1,5 @@
 import { getPets } from '../get-pets';
+import { slider } from './btn-slider';
 import { renderSlides } from './slider';
 
 const pets = getPets();
@@ -15,16 +16,19 @@ export function getLengthSlides() {
   if (desktop.matches) {
     lengthSlide = 3;
     renderSlides(pets, lengthSlide);
+    slider(lengthSlide);
   }
 
   if (tablet.matches) {
     lengthSlide = 2;
     renderSlides(pets, lengthSlide);
+    slider(lengthSlide);
   }
 
   if (mobile.matches) {
     lengthSlide = 1;
     renderSlides(pets, lengthSlide);
+    slider(lengthSlide);
   }
 
   return lengthSlide;
