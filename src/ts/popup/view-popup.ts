@@ -12,7 +12,7 @@ function openPopup(pet: Pet, petCard: HTMLDivElement) {
 }
 
 function closePopup(wrapperPopup: HTMLDivElement) {
-  const closePopup = wrapperPopup.querySelector('.btn-close') as HTMLButtonElement;
+  const closePopup = wrapperPopup.querySelector('.popup__btn-close') as HTMLButtonElement;
 
   closePopup.onclick = () => {
     wrapperPopup.remove();

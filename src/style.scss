@@ -13,6 +13,7 @@
 @import './styles/media/help-media.scss';
 @import './styles/media/donat-media.scss';
 @import './styles/media/footer-media.scss';
+@import './styles/media/popup-media.scss';
 
 * {
     margin: 0;
@@ -25,7 +26,6 @@
 
  .container {
     max-width: 1280px;
-    margin: 0 auto;
     display: flex;
 }
 
