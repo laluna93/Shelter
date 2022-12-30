@@ -1,10 +1,8 @@
 .pets {
-    max-width: 1280px;
     background-color: #F6F6F6;
     padding: 80px 40px 100px;
     flex-direction: column;
     gap: 60px;
-    display: flex;
     margin: 0 auto;
     text-align: center;
     &__title {
