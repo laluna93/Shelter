@@ -5,7 +5,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const baseConfig = {
-    entry: path.resolve(__dirname, './src/index'),
+    entry: {
+        index: "./src/pages/main/index.ts",
+        pets: "./src/pages/pets/index.ts",
+      },
     mode: 'development',
     module: {
         rules: [
@@ -29,7 +32,7 @@ const baseConfig = {
             },
             
             {
-                test: /.(png|jpg|jpeg|svg|gif|json)$/,
+                test: /.(png|jpg|jpeg|svg|gif|json|styles)$/,
                 type: 'asset/resource',
             },
         ],
@@ -37,14 +40,27 @@ const baseConfig = {
     resolve: {
         extensions: ['.ts', '.js'],
     },
+    
     output: {
-        filename: 'index.js',
-        path: path.resolve(__dirname, './dist'),
+        filename: "[name].bundle.js",
+        assetModuleFilename: "[path]/[name][ext]",
+        chunkFilename: "[id].[chunkhash].js",
+        path: path.resolve(__dirname, "dist/"),
+        publicPath: "auto",
+        clean: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './src/index.html'),
-            filename: 'index.html',
+            template: "./src/pages/main/index.html",
+            inject: true,
+            chunks: ["global", "index"],
+            filename: "index.html",
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/pages/pets/index.html",
+            inject: true,
+            chunks: ["global", "pets"],
+            filename: "pets.html",
         }),
         new CleanWebpackPlugin(),
         new EslingPlugin({ extensions: 'ts' }),
