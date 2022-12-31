@@ -11,6 +11,17 @@
       "parasites": ["none"]
     },
     {
+      "name": "Cooper",
+      "img": "./assets/img/cards-pets/Cooper.jpg",
+      "type": "Cat",
+      "breed": "",
+      "description": "Cooper is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Cooper has bounced around a lot in his life, and is looking to find his forever home.",
+      "age": "2 months",
+      "inoculations": ["rabies"],
+      "diseases": ["none"],
+      "parasites": ["none"]
+    },
+    {
       "name": "Sophia",
       "img": "./assets/img/cards-pets/Sophia.jpg",
       "type": "Dog",
@@ -30,6 +41,17 @@
       "age": "3 years 6 months",
       "inoculations": ["adenovirus", "distemper"],
       "diseases": ["right back leg mobility reduced"],
+      "parasites": ["none"]
+    },
+    {
+      "name": "Nala",
+      "img": "./assets/img/cards-pets/Nala.jpg",
+      "type": "Cat",
+      "breed": "",
+      "description": "Nala is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Nala has bounced around a lot in his life, and is looking to find his forever home.",
+      "age": "2 months",
+      "inoculations": ["rabies"],
+      "diseases": ["none"],
       "parasites": ["none"]
     },
     {
@@ -76,7 +98,6 @@
       "diseases": ["none"],
       "parasites": ["none"]
     },
-    
     {
       "name": "Charly",
       "img": "./assets/img/cards-pets/Charly.jpg",
@@ -87,6 +108,17 @@
       "inoculations": ["bordetella bronchiseptica", "leptospirosis"],
       "diseases": ["deafness", "blindness"],
       "parasites": ["lice", "fleas"]
+    },
+    {
+      "name": "Tucker",
+      "img": "./assets/img/cards-pets/Tucker.jpg",
+      "type": "Cat",
+      "breed": "",
+      "description": "Tucker is a little shy at first, but very sweet when he warms up. He likes playing with shoe strings and bottle caps. He is quick to learn the rhythms of his human’s daily life. Tucker has bounced around a lot in his life, and is looking to find his forever home.",
+      "age": "2 months",
+      "inoculations": ["rabies"],
+      "diseases": ["none"],
+      "parasites": ["none"]
     },
     {
       "name": "Piper",
