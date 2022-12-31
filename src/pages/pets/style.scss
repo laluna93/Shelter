@@ -1,2 +1,7 @@
 @import './styles/header.scss';
 @import './styles/footer.scss';
+
+.container {
+    max-width: 1280px;
+    display: flex;
+}
