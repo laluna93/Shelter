@@ -32,7 +32,7 @@ const baseConfig = {
             },
             
             {
-                test: /.(png|jpg|jpeg|svg|gif|json|styles)$/,
+                test: /\.(png|jpg|jpeg|svg|gif|json|styles)$/,
                 type: 'asset/resource',
             },
         ],
@@ -43,28 +43,31 @@ const baseConfig = {
     
     output: {
         filename: "[name].bundle.js",
-        assetModuleFilename: "[path]/[name][ext]",
+        assetModuleFilename: "assets/[name][ext]",
         chunkFilename: "[id].[chunkhash].js",
         path: path.resolve(__dirname, "dist/"),
         publicPath: "auto",
-        clean: true,
+        clean: true
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/pages/main/index.html",
             inject: true,
-            chunks: ["global", "index"],
+            chunks: ["index"],
             filename: "index.html",
         }),
         new HtmlWebpackPlugin({
             template: "./src/pages/pets/index.html",
             inject: true,
-            chunks: ["global", "pets"],
+            chunks: ["pets"],
             filename: "pets.html",
         }),
-        new CleanWebpackPlugin(),
+        // new CleanWebpackPlugin(),
         new EslingPlugin({ extensions: 'ts' }),
-        new CopyPlugin({ patterns: [{ from: './src/assets/img', to: 'assets/img' },
+        new CopyPlugin(
+            { 
+                patterns: [
+                    { from: './src/assets/img/cards-pets', to: 'assets/img/cards-pets' },
         { from: './src/assets/json', to: 'assets/json' }] }),
     ],
 };
