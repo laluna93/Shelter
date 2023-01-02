@@ -1,9 +1,8 @@
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
+
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const EslingPlugin = require('eslint-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const baseConfig = {
     entry: {
         index: "./src/pages/main/index.ts",
@@ -43,7 +42,7 @@ const baseConfig = {
     
     output: {
         filename: "[name].bundle.js",
-        assetModuleFilename: "assets/[name][ext]",
+        assetModuleFilename: "[path]/[name][ext]",
         chunkFilename: "[id].[chunkhash].js",
         path: path.resolve(__dirname, "dist/"),
         publicPath: "auto",
@@ -62,13 +61,11 @@ const baseConfig = {
             chunks: ["pets"],
             filename: "pets.html",
         }),
-        // new CleanWebpackPlugin(),
-        new EslingPlugin({ extensions: 'ts' }),
         new CopyPlugin(
             { 
                 patterns: [
-                    { from: './src/assets/img/cards-pets', to: 'assets/img/cards-pets' },
-        { from: './src/assets/json', to: 'assets/json' }] }),
+        { from: './src/assets/img/cards-pets', to: './src/assets/img/cards-pets' },
+        { from: './src/assets/json', to: './src/assets/json' }] }),
     ],
 };
 
