@@ -2,14 +2,18 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    color: #FAFAFA;
     font-family: Arial;
     font-weight: 400;
     font-size: 15px;
-    margin: 60px auto;
-    padding: 0px 40px;
+    margin: 0 auto;
+    padding: 30px 30px 0;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     &__logo {
-        color: #FFFFFF;
+        color: #292929;
         font-family: Arial;
         font-weight: 400;
         font-size: 13px;
@@ -18,7 +22,7 @@
         text-decoration-line: none;
     }
     &__title {
-        color: #F1CDB3;
+        color: #545454;
         font-family: Georgia;
         font-weight: 400;
         font-size: 33px;
@@ -35,16 +39,17 @@
     &__link {
         cursor: pointer;
         padding-bottom:2px;
-        color: #CDCDCD;
+        color: #292929;
         text-decoration-line: none;
         transition: 0.4s;
         &:hover {
-            color: #FAFAFA;
+            color: #545454;
             transition: 0.4s;
         }
         &_active {
             border-bottom: 3px solid #F1CDB3;
-            color: #FAFAFA;
+            color: #545454;
+            text-decoration-line: none;
         }
     }
 }
