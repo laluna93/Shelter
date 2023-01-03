@@ -64,14 +64,15 @@ export function btnPets(wrapper: any) {
 
   btnStart.onclick = (() => {
     count = 1;
-    movePagination(count, 'start');
+    slideEndOrStart(count);
     start(btnStart, btnPrev, btnNext, btnend);
     page.innerHTML = `${count}`;
   });
   btnPrev.onclick = (() => {
     if (count > 1) {
       count -= 1;
-      movePagination(count, 'prev');
+      slideEndOrStart(count);
+
       btnend.disabled = false;
       btnNext.disabled = false;
       page.innerHTML = `${count}`;
@@ -85,8 +86,7 @@ export function btnPets(wrapper: any) {
   btnNext.onclick = (() => {
     if (count < pagination!.children.length) {
       count += 1;
-      movePagination(count, 'next');
-      console.log(pagination!.children.length, count);
+      slideEndOrStart(count);
       btnStart.disabled = false;
       btnPrev.disabled = false;
       page.innerHTML = `${count}`;
@@ -98,47 +98,24 @@ export function btnPets(wrapper: any) {
   });
   btnend.onclick = (() => {
     count = pagination!.children.length;
-    movePagination(count, 'end');
+    slideEndOrStart(count);
     end(btnStart, btnPrev, btnNext, btnend);
     page.innerHTML = `${count}`;
   });
 }
 
-export function movePagination(count: number, directionSlide: string) {
-  // if (directionSlide === 'end') {
-  //   [...pagination!.children].forEach((e) => {
-  //     if (!e.classList.contains('active')) {
-  //       pagination!.append(pagination!.firstElementChild!);
-  //     }
-  //   });
-  // }
-
-  if (directionSlide === 'start') {
-    [...pagination!.children].forEach((e) => {
-      if (!e.classList.contains('active')) {
-        pagination!.prepend(pagination!.lastElementChild!);
-      }
-    });
-  }
-
-  [...pagination!.children].forEach((e: any) => {
+export function slideEndOrStart(count: number) {
+  [...pagination!.children].forEach((e) => {
     e.classList.remove('active');
     if (e.id === String(count)) {
       e.classList.add('active');
-    }
-
-    if (e.classList.contains('active') && directionSlide === 'next') {
-      pagination!.append(pagination!.firstElementChild!);
-    }
-
-    if (e.classList.contains('active') && directionSlide === 'prev') {
-      pagination!.prepend(pagination?.lastElementChild!);
+    } else {
+      pagination!.append(e);
     }
   });
 }
 
 function start(start:HTMLButtonElement, prev:HTMLButtonElement, next:HTMLButtonElement, end:HTMLButtonElement) {
-  console.log(start, prev, next, end);
   start.disabled = true;
   prev.disabled = true;
   next.disabled = false;
@@ -146,7 +123,6 @@ function start(start:HTMLButtonElement, prev:HTMLButtonElement, next:HTMLButtonE
 }
 
 function end(start:HTMLButtonElement, prev:HTMLButtonElement, next:HTMLButtonElement, end:HTMLButtonElement) {
-  console.log(start, prev, next, end);
   start.disabled = false;
   prev.disabled = false;
   next.disabled = true;
