@@ -55,20 +55,31 @@ export function createPetCard({ name, img }:Pet) {
 }
 
 export function btnPets(wrapper: any) {
-  // const btnStart = wrapper.querySelector('.pets__btn-start') as HTMLButtonElement;
+  const btnStart = wrapper.querySelector('.pets__btn-start') as HTMLButtonElement;
   const btnPrev = wrapper.querySelector('.pets__btn-prev') as HTMLButtonElement;
   const btnNext = wrapper.querySelector('.pets__btn-next') as HTMLButtonElement;
-  // const btnend = wrapper.querySelector('.pets__btn-end') as HTMLButtonElement;
+  const btnend = wrapper.querySelector('.pets__btn-end') as HTMLButtonElement;
   let count = 1;
+  const page = wrapper.querySelector('.pets__number-page') as HTMLButtonElement;
 
-  // btnStart.onclick = (() => {
-  //   count = 1;
-  //   movePagination(count, 'start');
-  // });
+  btnStart.onclick = (() => {
+    count = 1;
+    movePagination(count, 'start');
+    start(btnStart, btnPrev, btnNext, btnend);
+    page.innerHTML = `${count}`;
+  });
   btnPrev.onclick = (() => {
     if (count > 1) {
       count -= 1;
       movePagination(count, 'prev');
+      btnend.disabled = false;
+      btnNext.disabled = false;
+      page.innerHTML = `${count}`;
+    }
+
+    if (count === 1) {
+      start(btnStart, btnPrev, btnNext, btnend);
+      page.innerHTML = `${count}`;
     }
   });
   btnNext.onclick = (() => {
@@ -76,23 +87,39 @@ export function btnPets(wrapper: any) {
       count += 1;
       movePagination(count, 'next');
       console.log(pagination!.children.length, count);
+      btnStart.disabled = false;
+      btnPrev.disabled = false;
+      page.innerHTML = `${count}`;
+    }
+
+    if (count === 3) {
+      end(btnStart, btnPrev, btnNext, btnend);
     }
   });
-  // btnend.onclick = (() => {
-  //   count = pagination!.children.length;
-  //   movePagination(count, 'end');
-  // });
+  btnend.onclick = (() => {
+    count = pagination!.children.length;
+    movePagination(count, 'end');
+    end(btnStart, btnPrev, btnNext, btnend);
+    page.innerHTML = `${count}`;
+  });
 }
 
 export function movePagination(count: number, directionSlide: string) {
-  // if (directionSlide === 'next') {
-  //   pagination!.append(pagination!.firstChild!);
-  //   // console.log(pagination!.firstChild!, 'pagination');
+  // if (directionSlide === 'end') {
+  //   [...pagination!.children].forEach((e) => {
+  //     if (!e.classList.contains('active')) {
+  //       pagination!.append(pagination!.firstElementChild!);
+  //     }
+  //   });
   // }
 
-  // if (directionSlide === 'prev') {
-  //   pagination!.prepend(pagination?.lastChild!);
-  // }
+  if (directionSlide === 'start') {
+    [...pagination!.children].forEach((e) => {
+      if (!e.classList.contains('active')) {
+        pagination!.prepend(pagination!.lastElementChild!);
+      }
+    });
+  }
 
   [...pagination!.children].forEach((e: any) => {
     e.classList.remove('active');
@@ -102,16 +129,28 @@ export function movePagination(count: number, directionSlide: string) {
 
     if (e.classList.contains('active') && directionSlide === 'next') {
       pagination!.append(pagination!.firstElementChild!);
-
-      console.log(pagination!.firstChild!, 'pagination');
     }
 
     if (e.classList.contains('active') && directionSlide === 'prev') {
       pagination!.prepend(pagination?.lastElementChild!);
-
-      console.log(pagination!.firstChild!, 'pagination');
     }
   });
+}
+
+function start(start:HTMLButtonElement, prev:HTMLButtonElement, next:HTMLButtonElement, end:HTMLButtonElement) {
+  console.log(start, prev, next, end);
+  start.disabled = true;
+  prev.disabled = true;
+  next.disabled = false;
+  end.disabled = false;
+}
+
+function end(start:HTMLButtonElement, prev:HTMLButtonElement, next:HTMLButtonElement, end:HTMLButtonElement) {
+  console.log(start, prev, next, end);
+  start.disabled = false;
+  prev.disabled = false;
+  next.disabled = true;
+  end.disabled = true;
 }
 
 btnPets(wrapperPets);
