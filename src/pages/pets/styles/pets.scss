@@ -24,7 +24,22 @@
         align-items: center;
         justify-content: center;
         position: relative;
+        transition: all 6s;
+
         &.active {
+
+        }
+        &.active-left {
+            animation: leftSliderActive 2s linear;
+        }
+        &.left {
+            animation: leftSlider 2s linear;
+        }
+        &.active-right {
+            animation: rightSliderActive 2s linear;
+        }
+        &.right {
+            animation: rightSlider 2s linear;
         }
     }
     &__number-page {
