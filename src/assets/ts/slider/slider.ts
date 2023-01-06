@@ -1,6 +1,6 @@
-import { Pet } from '../../model/pets-model';
 import { createSlide } from './slide';
-import { petsSlider } from '../selectors';
+import { Pet } from '../model/pets-model';
+import { petsSlider } from '../variables';
 
 export async function renderSlides(petsPromise: Promise<Pet[]>, lengthSlides: number) {
   const pets = await petsPromise.then((e) => e);

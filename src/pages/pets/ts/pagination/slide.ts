@@ -1,6 +1,6 @@
-import { Pet } from '../../model/pets-model';
-import { openPopup } from '../popup/view-popup';
-import { createPetCard } from './pet-card';
+import { Pet } from '../../../../assets/ts/model/pets-model';
+import { createPetCard } from '../../../../assets/ts/pet-card';
+import { openPopup } from '../../../../assets/ts/popup/view-popup';
 
 export function createPetsCards(pets: Pet[], id: number) {
   const slide = document.createElement('div') as HTMLDivElement;

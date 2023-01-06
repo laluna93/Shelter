@@ -1,12 +1,10 @@
-import { Pet } from '../../model/pets-model';
+import { Pet } from '../model/pets-model';
 import { createPopup } from './popup';
 
 function openPopup(pet: Pet, petCard: HTMLDivElement) {
   const openPopup = petCard.querySelector('.pet__btn') as HTMLButtonElement;
 
   openPopup.onclick = () => {
-    console.log('1');
-
     createPopup(pet);
   };
 

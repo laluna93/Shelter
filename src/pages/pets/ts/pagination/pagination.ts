@@ -1,6 +1,6 @@
-import { Pet } from '../../model/pets-model';
-import { pagination } from '../variables';
-import { createPetCard } from './pet-card';
+import { Pet } from '../../../../assets/ts/model/pets-model';
+import { createPetCard } from '../../../../assets/ts/pet-card';
+import { pagination } from '../../../../assets/ts/variables';
 import { createPetsCards } from './slide';
 
 export async function createCardsPets(petsData: Promise<Pet[]>, orderSlides?: string) {

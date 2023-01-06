@@ -1,4 +1,4 @@
-import { burgerMenu, navigation, wrapperNavigation } from './selectors';
+import { burgerMenu, navigation, wrapperNavigation } from './variables';
 
 export function viewBurger() {
   burgerMenu!.addEventListener('click', () => {

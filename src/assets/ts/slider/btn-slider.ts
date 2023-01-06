@@ -1,5 +1,5 @@
+import { btnLeftSlider, btnRightSlider, petsSlider } from '../variables';
 import { moveSlider } from './move-slider';
-import { btnLeftSlider, btnRightSlider, petsSlider } from '../selectors';
 
 export function slider(lengthSlide: number) {
   let numberPage: number = 1;

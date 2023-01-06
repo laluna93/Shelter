@@ -1,6 +1,6 @@
-import { Pet } from '../model/pets-model';
+import { Pet } from './model/pets-model';
 
-export function createPetCard({ name, img }:Pet) {
+export function createPetCard({ name, img }: Pet) {
   const wrapperCard = document.createElement('div') as HTMLDivElement;
 
   wrapperCard.classList.add('pet');

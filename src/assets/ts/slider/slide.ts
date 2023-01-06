@@ -1,4 +1,4 @@
-import { Pet } from '../../model/pets-model';
+import { Pet } from '../model/pets-model';
 import { createPetCard } from '../pet-card';
 import { openPopup } from '../popup/view-popup';
 

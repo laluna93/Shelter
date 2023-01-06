@@ -1,4 +1,4 @@
-import { btnLeftSlider, btnRightSlider, petsSlider } from '../selectors';
+import { btnLeftSlider, btnRightSlider, petsSlider } from '../variables';
 
 export function moveSlider(numberPage: number, classActive:string, classSlider:string) {
   [...petsSlider.children].forEach((e) => {

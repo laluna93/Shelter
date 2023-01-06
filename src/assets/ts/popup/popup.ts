@@ -1,4 +1,4 @@
-import { Pet } from '../../model/pets-model';
+import { Pet } from '../model/pets-model';
 import { closePopup } from './view-popup';
 
 export function createPopup(pet: Pet) {

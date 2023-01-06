@@ -1,6 +1,6 @@
+import { viewBurger } from '../../assets/ts/burger-menu';
+import { getLengthSlides } from '../../assets/ts/slider/length-slide';
 import './style.scss';
-import { viewBurger } from './ts/burger-menu';
-import { getLengthSlides } from './ts/slider/length-slide';
 
 getLengthSlides();
 viewBurger();

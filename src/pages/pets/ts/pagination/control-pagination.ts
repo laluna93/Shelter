@@ -1,5 +1,5 @@
+import { pagination, pets } from '../../../../assets/ts/variables';
 import { changeNumberPage } from '../number-page';
-import { pagination, pets } from '../variables';
 import { changeActiveBtn } from './active-btn-pagination';
 import { createCardsPets } from './pagination';
 
