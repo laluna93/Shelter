@@ -3,14 +3,10 @@ import { createPetCard } from '../../../../assets/ts/pet-card';
 import { pagination } from '../../../../assets/ts/variables';
 import { createPetsCards } from './slide';
 
-export async function createCardsPets(petsData: Promise<Pet[]>, orderSlides?: string) {
+export async function createCardsPets(petsData: Promise<Pet[]>) {
   const pets = await petsData.then((e) => e);
   let id = 0;
   const arrSlides: HTMLDivElement[] = [];
-
-  if (orderSlides === 'start') {
-    [...pagination!.children].sort();
-  }
 
   pets.forEach((e, i) => {
     if (i % 8 === 0) {

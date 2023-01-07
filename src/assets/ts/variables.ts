@@ -12,9 +12,14 @@ const pagination = wrapperPets.querySelector('.pets__pagination') as HTMLDivElem
 const desktop = window.matchMedia('(min-width: 1200px)');
 const tablet = window.matchMedia('(max-width: 1199px) and (min-width: 768px)');
 const mobile = window.matchMedia('(max-width: 767px) and (min-width: 320px)');
+const btnStart = wrapperPets.querySelector('.pets__btn-start') as HTMLButtonElement;
+const btnPrev = wrapperPets.querySelector('.pets__btn-prev') as HTMLButtonElement;
+const btnNext = wrapperPets.querySelector('.pets__btn-next') as HTMLButtonElement;
+const btnend = wrapperPets.querySelector('.pets__btn-end') as HTMLButtonElement;
 
 export {
   petsSlider, btnLeftSlider, btnRightSlider,
   burgerMenu, navigation, wrapperNavigation,
   pets, wrapperPets, pagination,
-  desktop, tablet, mobile };
+  desktop, tablet, mobile, btnStart, btnPrev,
+  btnNext, btnend };

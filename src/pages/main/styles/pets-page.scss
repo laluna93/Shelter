@@ -92,15 +92,6 @@
     }
 }
 
-@keyframes leftSliderActive {
-    to {
-        transform: translateX(-100%);
-        
-    }
-    from {
-        transform: translateX(0);
-    }
-}
 
 @keyframes rightSlider {
     to {
@@ -113,11 +104,4 @@
     }
 }
 
-@keyframes rightSliderActive {
-    to {
-        transform: translateX(0);
-    }
-    from {
-        transform: translateX(-100%);
-    }
-}
+

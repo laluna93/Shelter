@@ -1,42 +1,36 @@
-import { pagination, pets } from '../../../../assets/ts/variables';
+import { btnend, btnNext, btnPrev, btnStart, pagination, pets, wrapperPets } from '../../../../assets/ts/variables';
 import { changeNumberPage } from '../number-page';
 import { changeActiveBtn } from './active-btn-pagination';
+import { movePagination } from './btn-pagination';
 import { createCardsPets } from './pagination';
 
-export function btnPets(wrapper: HTMLDivElement) {
-  const btnStart = wrapper.querySelector('.pets__btn-start') as HTMLButtonElement;
-  const btnPrev = wrapper.querySelector('.pets__btn-prev') as HTMLButtonElement;
-  const btnNext = wrapper.querySelector('.pets__btn-next') as HTMLButtonElement;
-  const btnend = wrapper.querySelector('.pets__btn-end') as HTMLButtonElement;
+export function btnPets() {
   let count = 1;
   const arrayBtn:HTMLButtonElement[] = [btnStart, btnPrev, btnNext, btnend];
 
   btnStart.onclick = (() => {
     count = 1;
     pagination!.innerHTML = '';
-    createCardsPets(pets, 'start');
+    createCardsPets(pets);
     changeActiveBtn(arrayBtn, true, true, false, false);
-    changeNumberPage(wrapper, count);
+    changeNumberPage(wrapperPets, count);
   });
   btnPrev.onclick = (() => {
     if (count > 1) {
       count -= 1;
-      changeStyleSlides(count, 'right', 'active-right');
-      changeActiveBtn(arrayBtn, false, false, false, false);
-      changeNumberPage(wrapper, count);
+
+      movePagination(count, arrayBtn, 'right');
     }
 
     if (count === 1) {
       changeActiveBtn(arrayBtn, true, true, false, false);
-      changeNumberPage(wrapper, count);
+      changeNumberPage(wrapperPets, count);
     }
   });
   btnNext.onclick = (() => {
     if (count < pagination!.children.length) {
       count += 1;
-      changeStyleSlides(count, 'left', 'active-left');
-      changeActiveBtn(arrayBtn, false, false, false, false);
-      changeNumberPage(wrapper, count);
+      movePagination(count, arrayBtn, 'left');
     }
 
     if (count === 3) {
@@ -47,30 +41,39 @@ export function btnPets(wrapper: HTMLDivElement) {
     count = pagination!.children.length;
     changeStyleSlides(count, 'end');
     changeActiveBtn(arrayBtn, false, false, true, true);
-    changeNumberPage(wrapper, count);
+    changeNumberPage(wrapperPets, count);
   });
 }
 
-export function changeStyleSlides(count: number, classSlider:string, classActive?:string) {
-  [...pagination!.children].forEach((e) => {
-    e.classList.remove('active');
+export function changeStyleSlides(numberPage: number, classSlider:string) {
+  [...pagination.children].forEach((e) => {
     removeClassStyleSlides(e);
-    if (e.id === String(count)) {
+
+    if (e.id === `${numberPage}`) {
       e.classList.add('active');
-      if (classActive) {
-        e.classList.add(classActive);
-        moveSlides(e, classSlider);
-      }
-    } else {
-      e.classList.add(classSlider);
-      if (classSlider === 'end') pagination!.append(e);
     }
+
+    if (classSlider === 'end' && !e.classList.contains('active')) {
+      pagination!.append(e);
+    }
+
+    if (e.classList.contains('active') && classSlider === 'left') {
+      moveSlides(e, classSlider);
+    }
+
+    if (e.classList.contains('active') && classSlider === 'right') {
+      pagination.prepend(pagination.lastElementChild!);
+      moveSlides(e, classSlider);
+    }
+
+    e.classList.add(classSlider);
+    e.addEventListener('animationend', () => {
+      e.classList.remove(classSlider);
+    }, { once: true });
   });
 }
 
 function moveSlides(e: Element, classStyle: string) {
-  if (classStyle === 'right') pagination!.prepend(e);
-
   return e.addEventListener('animationend', () => {
     if (classStyle === 'left') {
         pagination!.append(pagination!.firstElementChild!);
@@ -79,7 +82,7 @@ function moveSlides(e: Element, classStyle: string) {
 }
 
 function removeClassStyleSlides(e:Element) {
-  const classesSlide = ['left', 'right', 'active-left', 'active-right', 'active', 'end', 'start'];
+  const classesSlide = ['left', 'right', 'active', 'end', 'start'];
 
   return classesSlide.forEach((classSlide: string) => {
     e.classList.remove(`${classSlide}`);
