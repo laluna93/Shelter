@@ -1,17 +1,15 @@
-import { getPets } from '../get-pets';
+import { desktop, mobile, pets, tablet } from '../variables';
 import { slider } from './btn-slider';
 import { renderSlides } from './slider';
-
-const pets = getPets();
-const desktop = window.matchMedia('(min-width: 1200px)');
-const tablet = window.matchMedia('(max-width: 1199px) and (min-width: 768px)');
-const mobile = window.matchMedia('(max-width: 767px) and (min-width: 320px)');
 
 tablet.addEventListener('change', getLengthSlides);
 desktop.addEventListener('change', getLengthSlides);
 mobile.addEventListener('change', getLengthSlides);
 export function getLengthSlides() {
   let lengthSlide = 0;
+  const path = document.location.pathname;
+
+  console.log(path, 'p');
 
   if (desktop.matches) {
     lengthSlide = 3;

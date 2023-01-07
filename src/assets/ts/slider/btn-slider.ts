@@ -10,11 +10,11 @@ export function slider(lengthSlide: number) {
 
   btnLeftSlider.onclick = () => {
     numberPage > 1 ? numberPage -= 1 : numberPage = petsSlider.children.length;
-    moveSlider(numberPage, 'active-right', 'right');
+    moveSlider(numberPage, 'right');
   };
 
   btnRightSlider.onclick = () => {
     numberPage < petsSlider.children.length ? numberPage += 1 : numberPage = 1;
-    moveSlider(numberPage, 'active-left', 'left');
+    moveSlider(numberPage, 'left');
   };
 }

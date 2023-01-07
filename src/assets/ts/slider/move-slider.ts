@@ -1,14 +1,12 @@
 import { btnLeftSlider, btnRightSlider, petsSlider } from '../variables';
 
-export function moveSlider(numberPage: number, classActive:string, classSlider:string) {
+export function moveSlider(numberPage: number, classSlider:string) {
   [...petsSlider.children].forEach((e) => {
     removeClassSlides(e);
 
     if (e.id === `${numberPage}`) {
       e.classList.add('active');
-      e.classList.add(classActive);
-    } else {
-      e.classList.add(classSlider);
+      // e.classList.add(classActive);
     }
 
     if (e.classList.contains('active') && classSlider === 'left') {
@@ -19,6 +17,11 @@ export function moveSlider(numberPage: number, classActive:string, classSlider:s
       petsSlider.prepend(petsSlider.lastElementChild!);
       moveSlides(e, 'right');
     }
+
+    e.classList.add(classSlider);
+    e.addEventListener('animationend', () => {
+      e.classList.remove(classSlider);
+    }, { once: true });
   });
 }
 
