@@ -6,7 +6,6 @@ export function moveSlider(numberPage: number, classSlider:string) {
 
     if (e.id === `${numberPage}`) {
       e.classList.add('active');
-      // e.classList.add(classActive);
     }
 
     if (e.classList.contains('active') && classSlider === 'left') {
@@ -19,9 +18,6 @@ export function moveSlider(numberPage: number, classSlider:string) {
     }
 
     e.classList.add(classSlider);
-    e.addEventListener('animationend', () => {
-      e.classList.remove(classSlider);
-    }, { once: true });
   });
 }
 
@@ -34,13 +30,15 @@ function moveSlides(e: Element, classStyle: string) {
       petsSlider.append(petsSlider.firstElementChild!);
     }
 
+    e.classList.remove(classStyle);
+
     btnRightSlider.disabled = false;
     btnLeftSlider.disabled = false;
   }, { once: true });
 }
 
 function removeClassSlides(e:Element) {
-  const classesSlide = ['left', 'right', 'active-left', 'active-right', 'active'];
+  const classesSlide = ['left', 'right', 'active'];
 
   return classesSlide.forEach((classSlide: string) => {
     e.classList.remove(`${classSlide}`);
