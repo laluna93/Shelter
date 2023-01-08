@@ -8,7 +8,8 @@
 @media(min-width: 320px) and (max-width: 767px) {
     .header {
         overflow: hidden;
-        margin-top: 30px;
+        margin-top: 0;
+        padding: 30px 53px 30px 10px;
         &__wrapper-navigation {
             display: flex;
             justify-content: center;

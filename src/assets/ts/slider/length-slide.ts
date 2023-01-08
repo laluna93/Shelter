@@ -13,7 +13,9 @@ export function getLengthSlides() {
 
   if (path === '/index.html') {
     resultLength = changeLengthSlider();
-  } else {
+  }
+
+  if (path === '/pets.html') {
     resultLength = changeLengthPagination();
   }
 
