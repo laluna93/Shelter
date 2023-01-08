@@ -9,17 +9,15 @@ desktop.addEventListener('change', getLengthSlides);
 mobile.addEventListener('change', getLengthSlides);
 export function getLengthSlides() {
   const path = document.location.pathname;
-  let result: number = 0;
+  let resultLength: number = 0;
 
   if (path === '/index.html') {
-    result = changeLengthSlider();
+    resultLength = changeLengthSlider();
   } else {
-    result = changeLengthPagination();
+    resultLength = changeLengthPagination();
   }
 
-  console.log(result, 'r');
-
-  return result;
+  return resultLength;
 }
 
 function changeLengthPagination() {
