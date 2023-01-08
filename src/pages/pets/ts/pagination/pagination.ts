@@ -20,7 +20,7 @@ export async function createCardsPets(petsData: Promise<Pet[]>, lengthSlide: num
     createPetCard(e);
   });
 
-  return arrSlides.forEach((e) => {
+  arrSlides.forEach((e) => {
     pagination?.append(e);
   });
 }
