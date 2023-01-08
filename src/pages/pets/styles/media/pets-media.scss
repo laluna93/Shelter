@@ -1,0 +1,20 @@
+@media(min-width: 768px) and (max-width: 1200px) {
+    .pets {
+        &__pagination {
+            width: 768px;
+
+            flex-wrap: wrap;
+            height: 1603px;
+        }
+        &__slide {
+            width: 768px;
+            gap: 40px;
+            margin: 30px 0 40px;
+            overflow: hidden;
+            height: 1545px;
+        }
+        &__buttons {
+            padding-bottom: 76px;
+        }
+    }
+}
