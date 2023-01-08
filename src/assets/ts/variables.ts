@@ -16,10 +16,11 @@ const btnStart = wrapperPets.querySelector('.pets__btn-start') as HTMLButtonElem
 const btnPrev = wrapperPets.querySelector('.pets__btn-prev') as HTMLButtonElement;
 const btnNext = wrapperPets.querySelector('.pets__btn-next') as HTMLButtonElement;
 const btnend = wrapperPets.querySelector('.pets__btn-end') as HTMLButtonElement;
+const arrayBtn: HTMLButtonElement[] = [btnStart, btnPrev, btnNext, btnend];
 
 export {
   petsSlider, btnLeftSlider, btnRightSlider,
   burgerMenu, navigation, wrapperNavigation,
   pets, wrapperPets, pagination,
   desktop, tablet, mobile, btnStart, btnPrev,
-  btnNext, btnend };
+  btnNext, btnend, arrayBtn };

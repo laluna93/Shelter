@@ -1,8 +1,9 @@
+import { removeClassStyleSlides } from '../remove-class';
 import { btnLeftSlider, btnRightSlider, petsSlider } from '../variables';
 
 export function moveSlider(numberPage: number, classSlider:string) {
   [...petsSlider.children].forEach((e) => {
-    removeClassSlides(e);
+    removeClassStyleSlides(e);
 
     if (e.id === `${numberPage}`) {
       e.classList.add('active');
@@ -35,12 +36,4 @@ function moveSlides(e: Element, classStyle: string) {
     btnRightSlider.disabled = false;
     btnLeftSlider.disabled = false;
   }, { once: true });
-}
-
-function removeClassSlides(e:Element) {
-  const classesSlide = ['left', 'right', 'active'];
-
-  return classesSlide.forEach((classSlide: string) => {
-    e.classList.remove(`${classSlide}`);
-  });
 }
