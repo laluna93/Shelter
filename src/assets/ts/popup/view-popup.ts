@@ -15,11 +15,15 @@ function closePopup(wrapperPopup: HTMLDivElement) {
   const closePopup = wrapperPopup.querySelector('.popup__btn-close') as HTMLButtonElement;
 
   closePopup.onclick = () => {
+    document.body.style.overflow = '';
+
     wrapperPopup.remove();
   };
 
   wrapperPopup.onclick = (e) => {
     if (e.target === wrapperPopup) {
+      document.body.style.overflow = '';
+
       wrapperPopup.remove();
     }
   };

@@ -23,6 +23,7 @@ export function createPopup(pet: Pet) {
       </div>
   </div>`;
   closePopup(wrapperPopup);
+  document.body.style.overflow = 'hidden';
 
   return wrapperPopup;
 }
