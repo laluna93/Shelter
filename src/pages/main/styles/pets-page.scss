@@ -25,17 +25,11 @@
         position: relative;
         gap: 90px;
         display: flex;
-        &.active-left {
-            animation: leftSliderActive 2s linear;
-        }
         &.left {
-            animation: leftSlider 2s linear;
-        }
-        &.active-right {
-            animation: rightSliderActive 2s linear;
+            animation: leftSlider 1s linear;
         }
         &.right {
-            animation: rightSlider 2s linear;
+            animation: rightSlider 1s linear;
         }
     }
     &__btn-slider-left {

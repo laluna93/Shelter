@@ -64,11 +64,28 @@
             width: 7%;
             position: relative;
             z-index: 3;
+            transition: all 1s;
             &-line {
                 background-color: #F1CDB3;
                 height: 2px;
             }
+            &.active {
+                transform: rotate(-90deg);
+                animation: activeBurger 1s linear;
+                
+            }
         }
+
+    }
+}
+
+@keyframes activeBurger {
+    to {
+        transform: rotate(-90deg);
+
+    }
+    from {
+        transform: rotate(0deg);
 
     }
 }
