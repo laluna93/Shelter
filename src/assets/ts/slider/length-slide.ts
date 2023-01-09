@@ -7,11 +7,12 @@ import { slider } from './btn-slider';
 tablet.addEventListener('change', getLengthSlides);
 desktop.addEventListener('change', getLengthSlides);
 mobile.addEventListener('change', getLengthSlides);
+const path = document.location.pathname;
+
 export function getLengthSlides() {
-  const path = document.location.pathname;
   let resultLength: number = 0;
 
-  if (path === '/index.html') {
+  if (path === '/index.html' || path === '/') {
     resultLength = changeLengthSlider();
   }
 
@@ -50,6 +51,7 @@ function changeLengthSlider() {
   if (desktop.matches) {
     lengthSlide = 3;
     slider(lengthSlide);
+    console.log('1');
   }
 
   if (tablet.matches) {

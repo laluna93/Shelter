@@ -17,10 +17,12 @@ export async function createCardsPets(petsData: Promise<Pet[]>, lengthSlide: num
       arrSlides.push(createPetsCards(pets.slice(i, i + lengthSlide), id += 1));
     }
 
+    console.log(petsData);
+
     createPetCard(e);
   });
 
-  arrSlides.forEach((e) => {
+  return arrSlides.forEach((e) => {
     pagination?.append(e);
   });
 }
