@@ -1,8 +1,8 @@
-import { changeActiveBtn } from '../../pages/pets/ts/pagination/active-btn-pagination';
+import { pagination } from '../variables';
+import { changeActiveBtn } from './active-buttons';
 import { removeClassStyleSlides } from './remove-class';
-import { pagination } from './variables';
 
-export function moveSliderOrPagination(
+export function movePets(
   wrapperSLide: HTMLDivElement,
   numberPage: number,
   classSlider:string,

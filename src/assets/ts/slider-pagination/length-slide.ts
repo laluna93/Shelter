@@ -1,8 +1,8 @@
 import { changeNumberPage } from '../../../pages/pets/ts/number-page';
-import { changeActiveBtn } from '../../../pages/pets/ts/pagination/active-btn-pagination';
-import { createCardsPets } from '../../../pages/pets/ts/pagination/pagination';
 import { arrayBtn, desktop, mobile, pagination, pets, petsSlider, tablet, wrapperPets } from '../variables';
-import { slider } from './btn-slider';
+import { clickButtonsSlider } from '../../../pages/main/ts/buttons-slider';
+import { createWrapperPets } from './wrapper-cards-pets';
+import { changeActiveBtn } from './active-buttons';
 
 tablet.addEventListener('change', getLengthSlides);
 desktop.addEventListener('change', getLengthSlides);
@@ -12,11 +12,11 @@ const path = document.location.pathname;
 export function getLengthSlides() {
   let resultLength: number = 0;
 
-  if (path === '/index.html' || path === '/') {
+  if (path === '/index.html' || path === '/Shelter/dist/' || path === '/Shelter/dist/index.html') {
     resultLength = changeLengthSlider();
   }
 
-  if (path === '/pets.html') {
+  if (path === '/pets.html' || path === '/Shelter/dist/pets.html') {
     resultLength = changeLengthPagination();
   }
 
@@ -40,7 +40,7 @@ function changeLengthPagination() {
     lengthSlide = 3;
   }
 
-  createCardsPets(pets, lengthSlide, pagination);
+  createWrapperPets(pets, lengthSlide, pagination);
 
   return lengthSlide;
 }
@@ -50,21 +50,20 @@ function changeLengthSlider() {
 
   if (desktop.matches) {
     lengthSlide = 3;
-    slider(lengthSlide);
-    console.log('1');
+    clickButtonsSlider(lengthSlide);
   }
 
   if (tablet.matches) {
     lengthSlide = 2;
-    slider(lengthSlide);
+    clickButtonsSlider(lengthSlide);
   }
 
   if (mobile.matches) {
     lengthSlide = 1;
-    slider(lengthSlide);
+    clickButtonsSlider(lengthSlide);
   }
 
-  createCardsPets(pets, lengthSlide, petsSlider);
+  createWrapperPets(pets, lengthSlide, petsSlider);
 
   return lengthSlide;
 }

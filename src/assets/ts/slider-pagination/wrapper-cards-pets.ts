@@ -1,8 +1,7 @@
-import { Pet } from '../../../../assets/ts/model/pets-model';
-import { createPetCard } from '../../../../assets/ts/pet-card';
-import { createPetsCards } from './slide';
+import { Pet } from '../model/pets-model';
+import { addCardsPets, createPetCard } from './cards-pets';
 
-export async function createCardsPets(petsData: Promise<Pet[]>, lengthSlide: number, pagination: HTMLDivElement) {
+export async function createWrapperPets(petsData: Promise<Pet[]>, lengthSlide: number, pagination: HTMLDivElement) {
   const pets = await petsData.then((e) => e);
   let id = 0;
   const arrSlides: HTMLDivElement[] = [];
@@ -14,10 +13,8 @@ export async function createCardsPets(petsData: Promise<Pet[]>, lengthSlide: num
   });
   pets.forEach((e, i) => {
     if (i % lengthSlide === 0) {
-      arrSlides.push(createPetsCards(pets.slice(i, i + lengthSlide), id += 1));
+      arrSlides.push(addCardsPets(pets.slice(i, i + lengthSlide), id += 1));
     }
-
-    console.log(petsData);
 
     createPetCard(e);
   });

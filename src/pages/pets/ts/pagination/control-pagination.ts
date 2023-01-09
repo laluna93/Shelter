@@ -1,13 +1,12 @@
-import { moveSliderOrPagination } from '../../../../assets/ts/slider-pagination';
-import { getLengthSlides } from '../../../../assets/ts/slider/length-slide';
+import { getLengthSlides } from '../../../../assets/ts/slider-pagination/length-slide';
+import { createWrapperPets } from '../../../../assets/ts/slider-pagination/wrapper-cards-pets';
+import { movePets } from '../../../../assets/ts/slider-pagination/move-pets';
 import { arrayBtn, btnend, btnNext, btnPrev,
   btnStart, pagination, pets, wrapperPets } from '../../../../assets/ts/variables';
 import { changeNumberPage } from '../number-page';
-import { changeActiveBtn } from './active-btn-pagination';
-import { movePagination } from './btn-pagination';
-import { createCardsPets } from './pagination';
+import { changeActiveBtn } from '../../../../assets/ts/slider-pagination/active-buttons';
 
-export function btnPets() {
+export function clickButtonsPagination() {
   let count = 1;
 
   btnStart.onclick = (() => {
@@ -15,7 +14,7 @@ export function btnPets() {
     pagination!.innerHTML = '';
     const lengthPagination = getLengthSlides();
 
-    createCardsPets(pets, lengthPagination, pagination);
+    createWrapperPets(pets, lengthPagination, pagination);
     changeActiveBtn(arrayBtn, true, true, false, false);
     changeNumberPage(wrapperPets, count);
   });
@@ -38,8 +37,13 @@ export function btnPets() {
 
   btnend.onclick = (() => {
     count = pagination!.children.length;
-    moveSliderOrPagination(pagination, count, 'end', arrayBtn);
+    movePets(pagination, count, 'end', arrayBtn);
     changeActiveBtn(arrayBtn, false, false, true, true);
     changeNumberPage(wrapperPets, count);
   });
+}
+
+export function movePagination(count: number, btns: HTMLButtonElement[], classstyle: string) {
+  movePets(pagination, count, classstyle, btns);
+  changeNumberPage(wrapperPets, count);
 }

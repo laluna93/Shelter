@@ -1,7 +1,7 @@
-import { moveSliderOrPagination } from '../slider-pagination';
-import { btnLeftSlider, btnRightSlider, petsSlider } from '../variables';
+import { btnLeftSlider, btnRightSlider, petsSlider } from '../../../assets/ts/variables';
+import { movePets } from '../../../assets/ts/slider-pagination/move-pets';
 
-export function slider(lengthSlide: number) {
+export function clickButtonsSlider(lengthSlide: number) {
   let numberPage: number = 1;
   const btns: HTMLButtonElement[] = [btnLeftSlider, btnRightSlider];
 
@@ -11,11 +11,11 @@ export function slider(lengthSlide: number) {
 
   btnLeftSlider.onclick = () => {
     numberPage > 1 ? numberPage -= 1 : numberPage = petsSlider.children.length;
-    moveSliderOrPagination(petsSlider, numberPage, 'right', btns);
+    movePets(petsSlider, numberPage, 'right', btns);
   };
 
   btnRightSlider.onclick = () => {
     numberPage < petsSlider.children.length ? numberPage += 1 : numberPage = 1;
-    moveSliderOrPagination(petsSlider, numberPage, 'left', btns);
+    movePets(petsSlider, numberPage, 'left', btns);
   };
 }
