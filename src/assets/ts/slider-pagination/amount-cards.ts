@@ -4,12 +4,12 @@ import { clickButtonsSlider } from '../../../pages/main/ts/buttons-slider';
 import { createWrapperPets } from './wrapper-cards-pets';
 import { changeActiveBtn } from './active-buttons';
 
-tablet.addEventListener('change', getLengthSlides);
-desktop.addEventListener('change', getLengthSlides);
-mobile.addEventListener('change', getLengthSlides);
+tablet.addEventListener('change', getAmountCards);
+desktop.addEventListener('change', getAmountCards);
+mobile.addEventListener('change', getAmountCards);
 const path = document.location.pathname;
 
-export function getLengthSlides() {
+export function getAmountCards() {
   let resultLength: number = 0;
 
   if (path === '/index.html' || path === '/Shelter/dist/' || path === '/Shelter/dist/index.html') {

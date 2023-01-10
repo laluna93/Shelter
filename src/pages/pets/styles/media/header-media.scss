@@ -76,9 +76,16 @@
                 animation: activeBurger 1s linear;
                 
             }
-
         }
-
+        &__shadow {
+            position: fixed;
+            top: 0;
+            width: 100wh;
+            height: 100vh;
+            background-color: rgba(0,0,0,40%);
+            left: 0;
+            right: 0;
+        }
     }
 }
 

@@ -52,5 +52,30 @@
             color: #545454;
             text-decoration-line: none;
         }
+        
+    }
+    &__shadow {
+        position: fixed;
+        height: 100vh;
+        top: 0%;
+        width: 0%;
+        left: -60%;
+        transition: all 1s;
+        &_active {
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.3);
+            left: 0;
+        }
+    }
+}
+
+@keyframes activeShadow {
+    to {
+        transform: transformX(-90%);
+
+    }
+    from {
+        transform: transformX(0%);
+
     }
 }

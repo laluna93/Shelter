@@ -1,8 +1,8 @@
 import { viewBurger } from '../../assets/ts/burger-menu';
-import { getLengthSlides } from '../../assets/ts/slider-pagination/length-slide';
+import { getAmountCards } from '../../assets/ts/slider-pagination/amount-cards';
 import './style.scss';
 import { clickButtonsPagination } from './ts/pagination/control-pagination';
 
 clickButtonsPagination();
-getLengthSlides();
+getAmountCards();
 viewBurger();

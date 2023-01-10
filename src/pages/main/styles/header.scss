@@ -8,6 +8,7 @@
     font-size: 15px;
     margin: 60px auto;
     padding: 0px 40px;
+    overflow: hidden;
     &__logo {
         color: #FFFFFF;
         font-family: Arial;
@@ -45,6 +46,19 @@
         &_active {
             border-bottom: 3px solid #F1CDB3;
             color: #FAFAFA;
+        }
+    }
+    &__shadow {
+        position: fixed;
+        height: 100vh;
+        top: 0%;
+        width: 0%;
+        left: -60%;
+        transition: all 1s;
+        &_active {
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.3);
+            left: 0;
         }
     }
 }

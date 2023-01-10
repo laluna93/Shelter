@@ -1,4 +1,4 @@
-import { getLengthSlides } from '../../../../assets/ts/slider-pagination/length-slide';
+import { getAmountCards } from '../../../../assets/ts/slider-pagination/amount-cards';
 import { createWrapperPets } from '../../../../assets/ts/slider-pagination/wrapper-cards-pets';
 import { movePets } from '../../../../assets/ts/slider-pagination/move-pets';
 import { arrayBtn, btnend, btnNext, btnPrev,
@@ -12,7 +12,7 @@ export function clickButtonsPagination() {
   btnStart.onclick = (() => {
     count = 1;
     pagination!.innerHTML = '';
-    const lengthPagination = getLengthSlides();
+    const lengthPagination = getAmountCards();
 
     createWrapperPets(pets, lengthPagination, pagination);
     changeActiveBtn(arrayBtn, true, true, false, false);
