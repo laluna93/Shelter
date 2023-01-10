@@ -1,0 +1,70 @@
+@import './styles/header.scss';
+@import './styles/main-page.scss';
+@import './styles/about-page.scss';
+@import './styles/pets-page.scss';
+@import './styles/help-page.scss';
+@import './styles/donat-page.scss';
+@import './styles/footer.scss';
+@import './styles/popup.scss';
+@import './styles/media/header-media.scss';
+@import './styles/media/main-media.scss';
+@import './styles/media/about-media.scss';
+@import './styles/media/pets-media.scss';
+@import './styles/media/help-media.scss';
+@import './styles/media/donat-media.scss';
+@import './styles/media/footer-media.scss';
+@import './styles/media/popup-media.scss';
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ body {
+    background: url(../../assets/img/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+ }
+
+ .container {
+    max-width: 1280px;
+    display: flex;
+}
+
+.title {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.btn {
+    font-family: 'Georgia';
+    font-size: 17px;
+    letter-spacing: 0.06em;
+    text-align: center;
+    border-radius: 25px;
+    transition: all 0.4s;
+    &:hover {
+        background-color: #FDDCC4;
+    }
+}
+
+.btn-slider {
+    position: absolute;
+    top: 43%;
+    padding: 17px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 1px solid #F1CDB3;
+    cursor: pointer;
+    transition: all 0.4s;
+    @media(min-width: 320px) and (max-width: 767px) {
+        top: 100%;
+        margin-top: 20px;
+    }
+    &:hover:enabled {
+        background-color: #FDDCC4;
+    }
+    &:disabled {
+        color:#aeaeae;
+        border: 1px solid #aeaeae;
+    }
+}

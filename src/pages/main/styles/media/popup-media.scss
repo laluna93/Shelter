@@ -1,0 +1,97 @@
+@media(min-width: 768px) and (max-width: 1200px) {
+    .popup {
+        &__container {
+            width: 682px;
+            height: 350px;
+        }
+        &__img  {
+            width: 350px;
+        }
+        &__info-pet {
+            padding: 15px 10px 37px 10px;
+
+        }
+        &__name-pet {
+            line-height: 45.5px;
+            margin-bottom: 10px;
+        }
+        &__description-pet {
+            font-size: 13px;
+            margin: 20px 0;
+        }
+        &__characteristics-pet {
+            padding-left: 14px;
+            gap: 5px;
+        }
+    }
+}
+
+@media(min-width: 650px) and (max-width: 767px) {
+    .popup {
+        &__container {
+            width: 530px;
+            height: 315px;
+        }
+        &__img  {
+            width: 280px;
+        }
+        &__name-pet {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+        &__type-pet {
+            font-size: 15px;
+        }
+        &__info-pet {
+            padding: 15px 10px 15px 10px;
+        }
+        &__description-pet {
+            font-size: 13px;
+            margin: 10px 0;
+        }
+        &__characteristics-pet {
+            padding-left: 13px;
+            gap: 1px;
+        }
+    }
+}
+
+@media(min-width: 320px) and (max-width: 649px) {
+    .popup {
+        &__container {
+            width: 271px;
+            height: 393px;
+        }
+        &__img  {
+            display: none;
+        }
+        &__name-pet {
+            font-size: 35px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        &__type-pet {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        &__info-pet {
+            padding: 10px;
+        }
+        &__description-pet {
+            margin: 23px 0 24px;
+            padding: 0 15px;
+            line-height: 14.3px;
+            font-size: 13px;
+            text-align: justify;
+        }
+        &__characteristics-pet {
+            padding-left: 25px;
+            gap: 5px;
+        }
+        &__btn-close {
+            top: -57px;
+            right: -19px;
+        }
+    }
+}

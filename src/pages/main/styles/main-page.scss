@@ -1,0 +1,33 @@
+.main {
+    margin: 60px auto 0;
+    gap: 42px;
+    padding: 0 40px;
+    &__wrapper {
+        max-width: 460px;
+        margin-top: 163px;
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+    }
+    &__title {
+        font-size: 44px;
+        line-height: 57.2px;
+        color: #FFFFFF;
+    }
+    &__info {
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+        color: #CDCDCD;
+    }
+    &__btn {
+        width: 207px;
+        min-height: 52px;
+        background-color: #F1CDB3;
+        color: #292929;
+        text-decoration: none;
+        padding: 17px 0;
+    }
+}
