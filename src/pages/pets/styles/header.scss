@@ -1,0 +1,81 @@
+.header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    margin: 0 auto;
+    padding: 30px 30px 20px 30px;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    &__logo {
+        color: #292929;
+        font-family: Arial;
+        font-weight: 400;
+        font-size: 13px;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-decoration-line: none;
+    }
+    &__title {
+        color: #545454;
+        font-family: Georgia;
+        font-weight: 400;
+        font-size: 33px;
+        margin-bottom: 10px;
+    }
+    &__burger {
+        display: none;
+    }
+    &__navigation{
+        display: flex;
+        list-style-type: none;
+        gap: 35px;
+    }
+    &__link {
+        cursor: pointer;
+        padding-bottom:2px;
+        color: #292929;
+        text-decoration-line: none;
+        transition: 0.4s;
+        &:hover {
+            color: #545454;
+            transition: 0.4s;
+        }
+        &_active {
+            border-bottom: 3px solid #F1CDB3;
+            color: #545454;
+            text-decoration-line: none;
+        }
+        
+    }
+    &__shadow {
+        position: fixed;
+        height: 100vh;
+        top: 0%;
+        width: 0%;
+        left: -60%;
+        transition: all 1s;
+        &_active {
+            width: 60%;
+            background-color: rgba(0, 0, 0, 0.3);
+            left: 0;
+        }
+    }
+}
+
+@keyframes activeShadow {
+    to {
+        transform: transformX(-90%);
+
+    }
+    from {
+        transform: transformX(0%);
+
+    }
+}

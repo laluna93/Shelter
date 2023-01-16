@@ -1,0 +1,34 @@
+@media(min-width: 768px) and (max-width: 1200px) {
+    .donat {
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+}
+
+@media(min-width: 320px) and (max-width: 767px) {
+    .donat {
+        padding: 42px 20px;
+        flex-direction: column-reverse;
+        gap: 42px;
+        &__title {
+            font-size: 25px;
+            line-height: 32.5px;
+            text-align: center;
+        }
+        &__type-card {
+            font-size: 15px;
+            letter-spacing: 0;
+            text-align: center;
+        }
+        &__card {
+            font-size: 15px;
+            justify-content: center;
+        }
+        &__info {
+            text-align: justify;
+        }
+        &__img {
+            width: 70%;
+        }
+    }
+}

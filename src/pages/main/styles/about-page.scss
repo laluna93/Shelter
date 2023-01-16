@@ -1,0 +1,28 @@
+.about-pets {
+    margin: 0 auto;
+    padding: 80px 40px 100px;
+    background-color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    gap: 120px;
+    &__wrapper {
+        max-width: 430px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    } 
+    &__title {
+        color: #545454;
+        font-size: 35px;
+        line-height: 45.5px;
+        letter-spacing: 2px;
+    }
+    &__info {
+        color: #4C4C4C;
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+    }
+}
